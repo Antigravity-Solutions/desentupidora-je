@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO e Metatags Dinâmicas (Preenchidas pelo script.js) -->
+    <title>Carregando...</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Preenchido pelo script.js) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="assets/img/share-preview.jpg">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Fixo -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#inicio" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 14V17C4 18.1046 4.89543 19 6 19H18C19.1046 19 20 18.1046 20 17V14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M12 2C8.5 6.5 6 9.5 6 12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12C18 9.5 15.5 6.5 12 2Z" fill="currentColor"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-title" data-config="business.name">Empresa Local</span>
+                    <span class="logo-subtitle" data-config="business.segment">Serviços Locais</span>
+                </div>
+            </a>
+
+            <!-- Menu de Navegação -->
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#por-que-escolher" class="nav-link">Diferenciais</a></li>
+                    <li><a href="#galeria" class="nav-link">Galeria</a></li>
+                    <li><a href="#avaliacoes" class="nav-link">Depoimentos</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botões do Header -->
+            <div class="header-actions">
+                <a href="#" class="btn btn-whatsapp btn-header" data-whatsapp-link="true" target="_blank" rel="noopener noreferrer">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.588 1.977 14.12 1.05 11.499 1.05c-5.447 0-9.873 4.372-9.877 9.802-.001 1.774.48 3.509 1.394 5.086L2.025 21.91l6.19-1.616c-.001.001 0 0 0 0zM17.65 14.86c-.29-.145-1.71-.846-1.974-.942-.266-.097-.459-.145-.653.145-.193.29-.747.942-.916 1.135-.168.193-.337.218-.627.072-1.737-.867-2.906-1.536-4.065-3.525-.3-.513.3-.477.859-1.597.09-.182.045-.34-.022-.485-.068-.145-.653-1.573-.895-2.153-.235-.568-.476-.491-.653-.5-.17-.008-.363-.01-.555-.01-.193 0-.507.072-.772.362-.266.29-1.013.99-1.013 2.415 0 1.424 1.037 2.803 1.182 2.996.145.193 2.04 3.115 4.939 4.368.69.298 1.229.476 1.649.609.693.22 1.324.19 1.822.115.556-.084 1.711-.7 1.952-1.376.24-.677.24-1.256.168-1.376-.07-.12-.264-.193-.553-.337z"/>
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-grid">
+                    
+                    <!-- Coluna da Esquerda (Conteúdo) -->
+                    <div class="hero-text-content">
+                        <!-- Badges dinâmicas injetadas pelo JS -->
+                        <div class="hero-badges" id="hero-badges-container"></div>
+
+                        <!-- Título e Subtítulos dinâmicos -->
+                        <h1 id="hero-title" data-config="hero.title">Atendimento profissional para sua necessidade</h1>
+                        <p class="hero-subtitle" data-config="hero.subtitle">Soluções rápidas para residências, empresas e condomínios.</p>
+                        <p class="hero-description" data-config="hero.description">Conte com uma equipe preparada para atender com agilidade, segurança e qualidade.</p>
+                        
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-whatsapp btn-large" data-whatsapp-link="true" target="_blank" rel="noopener noreferrer">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.588 1.977 14.12 1.05 11.499 1.05c-5.447 0-9.873 4.372-9.877 9.802-.001 1.774.48 3.509 1.394 5.086L2.025 21.91l6.19-1.616c-.001.001 0 0 0 0zM17.65 14.86c-.29-.145-1.71-.846-1.974-.942-.266-.097-.459-.145-.653.145-.193.29-.747.942-.916 1.135-.168.193-.337.218-.627.072-1.737-.867-2.906-1.536-4.065-3.525-.3-.513.3-.477.859-1.597.09-.182.045-.34-.022-.485-.068-.145-.653-1.573-.895-2.153-.235-.568-.476-.491-.653-.5-.17-.008-.363-.01-.555-.01-.193 0-.507.072-.772.362-.266.29-1.013.99-1.013 2.415 0 1.424 1.037 2.803 1.182 2.996.145.193 2.04 3.115 4.939 4.368.69.298 1.229.476 1.649.609.693.22 1.324.19 1.822.115.556-.084 1.711-.7 1.952-1.376.24-.677.24-1.256.168-1.376-.07-.12-.264-.193-.553-.337z"/>
+                                </svg>
+                                Chamar no WhatsApp
+                            </a>
+                            <a href="#" class="btn btn-phone btn-large" data-phone-primary-link="true">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                Ligar agora
+                            </a>
+                        </div>
+
+                        <!-- Card de Emergência Clicável -->
+                        <a href="#" class="emergency-contact-card" data-phone-primary-link="true">
+                            <div class="emergency-card-inner">
+                                <div class="emergency-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div class="emergency-info">
+                                    <span class="emergency-title">📞 Central de Atendimento</span>
+                                    <div class="emergency-phones">
+                                        <span class="phone-highlight"><span data-config="business.phonePrimary">(00) 00000-0000</span> <small>(Principal)</small></span>
+                                        <span class="phone-secundario" data-config="business.phoneSecondary">(00) 00000-0000</span>
+                                    </div>
+                                    <span class="emergency-cta">Clique para ligar</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Coluna da Direita (Imagem ou Placeholder) -->
+                    <div class="hero-media-content" id="hero-media-container"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Serviços -->
+        <section id="servicos" class="services-section">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle" data-config="business.segment">Serviços</span>
+                    <h2>Nossos Serviços e Especialidades</h2>
+                    <p>Soluções profissionais completas para residências, comércios, condomínios e indústrias.</p>
+                </div>
+
+                <!-- Grid de Serviços dinâmico -->
+                <div class="services-grid" id="services-grid"></div>
+            </div>
+        </section>
+
+        <!-- Seção Como Funciona -->
+        <section id="como-funciona" class="how-it-works-section">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">Sem Complicação</span>
+                    <h2>Como Funciona o Nosso Atendimento</h2>
+                    <p>Fale conosco em poucos passos e tenha seu problema resolvido sem estresse.</p>
+                </div>
+
+                <div class="steps-grid">
+                    
+                    <!-- Passo 1 -->
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Você chama no WhatsApp</h3>
+                        <p>Clique no botão e envie uma mensagem contando a sua necessidade. Nossa resposta é quase instantânea.</p>
+                        <a href="#" class="step-link" data-whatsapp-link="true" target="_blank" rel="noopener noreferrer">Enviar mensagem &rarr;</a>
+                    </div>
+
+                    <!-- Passo 2 -->
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Orientação e Orçamento</h3>
+                        <p>Nossa equipe técnica analisa a sua solicitação, passa orientações preliminares e um orçamento justo sem compromisso.</p>
+                    </div>
+
+                    <!-- Passo 3 -->
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Solução Rápida no Local</h3>
+                        <p>Enviamos nossa equipe equipada até você. Realizamos o serviço de forma rápida, limpa e com garantia.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Por que Escolher / Diferenciais -->
+        <section id="por-que-escolher" class="why-choose-section">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">Nossos Diferenciais</span>
+                    <h2>Por que escolher a <span data-config="business.name">Empresa Local</span>?</h2>
+                    <p>Compromisso com a qualidade, rapidez e total transparência em cada serviço.</p>
+                </div>
+
+                <!-- Grid de diferenciais dinâmico -->
+                <div class="why-choose-grid" id="why-choose-grid"></div>
+            </div>
+        </section>
+
+        <!-- Galeria Recentes -->
+        <section id="galeria" class="gallery-section">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">Resultados Reais</span>
+                    <h2>Galeria de Serviços Recentes</h2>
+                    <p>Veja a qualidade do nosso trabalho em campo. Nossos serviços são executados de ponta a ponta com capricho.</p>
+                </div>
+
+                <!-- Grid de galeria dinâmico -->
+                <div class="gallery-grid" id="gallery-grid"></div>
+            </div>
+        </section>
+
+        <!-- Área de Atendimento e Google Maps -->
+        <section class="location-section">
+            <div class="container location-container">
+                <div class="location-content">
+                    <span class="section-subtitle">Localização</span>
+                    <h2>Atendemos <span data-config="business.region">Sua Cidade e Região</span></h2>
+                    <p class="location-text">Realizamos atendimentos rápidos em residências, condomínios, prédios residenciais, comércios, lojas e indústrias de toda a região.</p>
+                    
+                    <ul class="location-list" id="location-list-container"></ul>
+
+                    <div class="location-cta-box">
+                        <p>Precisa de confirmação de cobertura no seu endereço?</p>
+                        <a href="#" class="btn btn-whatsapp" data-whatsapp-link="true" data-whatsapp-msg="Gostaria de saber se atendem no meu endereço." target="_blank" rel="noopener noreferrer">
+                            Consultar Endereço
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Wrapper do mapa dinâmico (Google Maps ou Placeholder) -->
+                <div class="map-wrapper" id="map-wrapper"></div>
+            </div>
+        </section>
+
+        <!-- Depoimentos (Avisos de mock no README e HTML) -->
+        <!-- NOTA IMPORTANTE: Substituir os depoimentos fictícios por avaliações reais do Google Maps / Redes Sociais antes de publicar o site! -->
+        <section id="avaliacoes" class="testimonials-section">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">Opinião de Quem Confia</span>
+                    <h2>O que nossos clientes dizem</h2>
+                    <p>Confira a avaliação de quem já contratou nossos serviços.</p>
+                </div>
+
+                <!-- Grid de avaliações dinâmico -->
+                <div class="testimonials-grid" id="testimonials-grid"></div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">Dúvidas Frequentes</span>
+                    <h2>Perguntas Frequentes</h2>
+                    <p>Encontre respostas rápidas sobre nossos serviços, formas de pagamento e horários de atendimento.</p>
+                </div>
+
+                <!-- Lista de FAQ dinâmico -->
+                <div class="faq-list" id="faq-list"></div>
+            </div>
+        </section>
+
+        <!-- CTA Final Section -->
+        <section id="contato" class="cta-final-section">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>Precisa de atendimento agora?</h2>
+                    <p>Não espere o problema piorar. Entre em contato imediatamente com a <span data-config="business.name">Empresa Local</span> e tenha nossa equipe no seu local rapidamente.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-whatsapp btn-large" data-whatsapp-link="true" target="_blank" rel="noopener noreferrer">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.588 1.977 14.12 1.05 11.499 1.05c-5.447 0-9.873 4.372-9.877 9.802-.001 1.774.48 3.509 1.394 5.086L2.025 21.91l6.19-1.616c-.001.001 0 0 0 0zM17.65 14.86c-.29-.145-1.71-.846-1.974-.942-.266-.097-.459-.145-.653.145-.193.29-.747.942-.916 1.135-.168.193-.337.218-.627.072-1.737-.867-2.906-1.536-4.065-3.525-.3-.513.3-.477.859-1.597.09-.182.045-.34-.022-.485-.068-.145-.653-1.573-.895-2.153-.235-.568-.476-.491-.653-.5-.17-.008-.363-.01-.555-.01-.193 0-.507.072-.772.362-.266.29-1.013.99-1.013 2.415 0 1.424 1.037 2.803 1.182 2.996.145.193 2.04 3.115 4.939 4.368.69.298 1.229.476 1.649.609.693.22 1.324.19 1.822.115.556-.084 1.711-.7 1.952-1.376.24-.677.24-1.256.168-1.376-.07-.12-.264-.193-.553-.337z"/>
+                            </svg>
+                            Chamar no WhatsApp
+                        </a>
+                        <a href="#" class="btn btn-phone btn-large" data-phone-primary-link="true" id="cta-phone-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            Ligar Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé (Footer) -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col-about">
+                <h3 data-config="business.name">Empresa Local</h3>
+                <p data-config="business.slogan">Atendimento rápido, profissional e confiável.</p>
+                <span class="badge badge-emergency footer-emergency">Atendimento de Qualidade</span>
+            </div>
+
+            <div class="footer-col-links">
+                <h4>Acesso Rápido</h4>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Nossos Serviços</a></li>
+                    <li><a href="#por-que-escolher">Diferenciais</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#avaliacoes">Depoimentos</a></li>
+                    <li><a href="#faq">FAQ (Dúvidas)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col-contact">
+                <h4>Contatos e Redes</h4>
+                <ul class="contact-info-list">
+                    <li>
+                        <strong>WhatsApp:</strong> 
+                        <a href="#" data-whatsapp-link="true" target="_blank" rel="noopener noreferrer">
+                            <span data-config="business.phonePrimary">(00) 00000-0000</span>
+                        </a>
+                    </li>
+                    <li>
+                        <strong>Ligação / Plantão:</strong> 
+                        <a href="#" data-phone-primary-link="true">
+                            <span data-config="business.phonePrimary">(00) 00000-0000</span>
+                        </a>
+                    </li>
+                    <li>
+                        <strong>Instagram:</strong>
+                        <a href="#" data-instagram-link="true" target="_blank" rel="noopener noreferrer">
+                            <span data-config="business.instagram">@empresa.local</span>
+                        </a>
+                    </li>
+                    <li>
+                        <strong>Atendimento:</strong> <span data-config="business.region">Sua Cidade e Região</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Faixa de Confiança do Rodapé -->
+        <div class="footer-trust-bar">
+            <div class="container footer-trust-container" id="footer-trust-container"></div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 <span data-config="business.name">Empresa Local</span>. Todos os direitos reservados. Landing Page de Demonstração.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <div class="whatsapp-floating" id="whatsappFloating">
+        <a href="#" class="btn btn-whatsapp btn-floating-whatsapp" data-whatsapp-link="true" target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.588 1.977 14.12 1.05 11.499 1.05c-5.447 0-9.873 4.372-9.877 9.802-.001 1.774.48 3.509 1.394 5.086L2.025 21.91l6.19-1.616c-.001.001 0 0 0 0zM17.65 14.86c-.29-.145-1.71-.846-1.974-.942-.266-.097-.459-.145-.653.145-.193.29-.747.942-.916 1.135-.168.193-.337.218-.627.072-1.737-.867-2.906-1.536-4.065-3.525-.3-.513.3-.477.859-1.597.09-.182.045-.34-.022-.485-.068-.145-.653-1.573-.895-2.153-.235-.568-.476-.491-.653-.5-.17-.008-.363-.01-.555-.01-.193 0-.507.072-.772.362-.266.29-1.013.99-1.013 2.415 0 1.424 1.037 2.803 1.182 2.996.145.193 2.04 3.115 4.939 4.368.69.298 1.229.476 1.649.609.693.22 1.324.19 1.822.115.556-.084 1.711-.7 1.952-1.376.24-.677.24-1.256.168-1.376-.07-.12-.264-.193-.553-.337z"/>
+            </svg>
+            <span>Falar Conosco</span>
+        </a>
+    </div>
+
+    <!-- JavaScript Data and Controller (Sem ES modules, carrega sequencialmente) -->
+    <script src="config.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

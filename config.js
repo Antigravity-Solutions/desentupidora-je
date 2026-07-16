@@ -6,21 +6,31 @@
  */
 
 const siteConfig = {
+  // Configuração da navegação principal do header
+  navigation: [
+    { label: "Início", target: "inicio" },
+    { label: "Serviços", target: "servicos" },
+    { label: "Resultados", target: "resultados" },
+    { label: "Sobre", target: "quem-somos" },
+    { label: "Dúvidas", target: "faq" },
+    { label: "Contato", target: "contato" }
+  ],
+
   // Dados fundamentais da empresa
   business: {
-    name: "Empresa Local",
-    segment: "Serviços Locais",
+    name: "DESENTUPIDORA J.E",
+    segment: "Serviços Sanitários",
     slogan: "Atendimento rápido, profissional e confiável.",
-    city: "Sua Cidade",
-    region: "Sua Cidade e Região",
-    phonePrimary: "(00) 00000-0000",
-    phoneSecondary: "(00) 00000-0000",
-    phonePrimaryRaw: "5500000000000",
-    whatsappRaw: "5500000000000",
-    whatsappMessage: "Olá, preciso de atendimento.",
-    instagram: "@empresa.local",
-    instagramUrl: "#",
-    googleMapsEmbed: "" // Iframe do Google Maps (Opcional - se vazio, exibe o placeholder)
+    city: "Santa Maria - RS",
+    region: "Santa Maria e Região",
+    phonePrimary: "(55) 996766820",
+    //phoneSecondary: "(55) 996766820",
+    phonePrimaryRaw: "55996766820",
+    whatsappRaw: "55996766820",
+    whatsappMessage: "Olá, preciso de atendimento. (Via Site)",
+    instagram: "@desentupidora_je",
+    instagramUrl: "https://www.instagram.com/desentupidora.je/",
+    googleMapsEmbed: "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.807492396557!2d-53.82725832355695!3d-29.667360113894663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95023355e5b9b86f%3A0x77aa1a7f551a1bd2!2sR.%20Nahir%20Zambrano%20da%20Costa%2C%208%20-%20Ch%C3%A1cara%20das%20Flores%2C%20Santa%20Maria%20-%20RS%2C%2097043-742!5e0!3m2!1spt-BR!2sbr!4v1784155405285!5m2!1spt-BR!2sbr' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='strict-origin-when-cross-origin'></iframe>" // Iframe do Google Maps (Opcional - se vazio, exibe o placeholder)
   },
 
   // Tema de Cores do Site (Opcional)
@@ -34,46 +44,62 @@ const siteConfig = {
 
   // Configurações de SEO da Página
   seo: {
-    title: "Empresa Local | Atendimento Profissional",
-    description: "Empresa local com atendimento rápido e profissional em Sua Cidade e Região.",
-    keywords: "serviços locais, atendimento profissional, empresa local, Sua Cidade"
+    title: "DESENTUPIDORA J.E | Atendimento Profissional",
+    description: "DESENTUPIDORA J.E com atendimento rápido e profissional em Santa Maria e Região.",
+    keywords: "serviços locais, atendimento profissional, DESENTUPIDORA J.E, Santa Maria e Região"
   },
 
   // Conteúdo da Seção Hero (Topo da Página)
   hero: {
     badges: ["Atendimento rápido", "Orçamento fácil"],
-    title: "Atendimento profissional para sua necessidade",
+    title: "Desentupimento e Serviços de Manutenção 24 Horas",
     subtitle: "Soluções rápidas para residências, empresas e condomínios.",
-    description: "Conte com uma equipe preparada para atender com agilidade, segurança e qualidade.",
-    image: "" // Caminho para imagem real (ex: "assets/img/hero.jpg"). Se vazio, exibe o placeholder.
+    description: "Desentupimentos, Eletricista, Encanador, Infiltrações, Limpeza de pátios e prédios, Limpeza de Caixa d'água e de calhas, Pintura e mão de obras em geral.",
+    image: "assets/img/banner-hero.png", // Caminho para imagem real (ex: "assets/img/hero.jpg"). Se vazio, exibe o placeholder.
+    imageAlt: "Serviços profissionais da Desentupidora J.E."
   },
 
   // Lista de Serviços Oferecidos
   // "featured: true" destaca o card no layout (estilo "Mais Procurado")
   services: [
     {
-      title: "Serviço Principal 1",
-      description: "Descrição detalhada do primeiro serviço principal oferecido pelo negócio.",
+      title: "Limpeza de fossas",
+      description: "Limpeza de fossas sépticas e sumidouros.",
       featured: true
     },
     {
-      title: "Serviço Principal 2",
-      description: "Descrição detalhada do segundo serviço principal oferecido pelo negócio.",
+      title: "Limpeza de caixas d'água",
+      description: "Limpeza de caixas d'água residenciais e comerciais.",
       featured: true
     },
     {
-      title: "Serviço Principal 3",
-      description: "Descrição detalhada do terceiro serviço principal oferecido pelo negócio.",
+      title: "Desentupimento",
+      description: "Desentupimento de pias, ralos, vasos sanitários e caixas de gordura.",
       featured: true
     },
     {
-      title: "Serviço Complementar 1",
-      description: "Descrição curta de um serviço complementar.",
+      title: "Limpeza de calhas",
+      description: "Limpeza de calhas residenciais e comerciais.",
       featured: false
     },
     {
-      title: "Serviço Complementar 2",
-      description: "Descrição curta de outro serviço complementar.",
+      title: "Limpeza de pátios",
+      description: "Limpeza de pátios residenciais e comerciais.",
+      featured: false
+    },
+    {
+      title: "Pintura",
+      description: "Pintura de casas, prédios e muros.",
+      featured: false
+    },
+    {
+      title: "Eletricista",
+      description: "Serviços de eletricista residencial e comercial.",
+      featured: false
+    },
+    {
+      title: "Encanador",
+      description: "Serviços de encanador residencial e comercial.",
       featured: false
     }
   ],
@@ -110,46 +136,46 @@ const siteConfig = {
   gallery: [
     {
       label: "Antes do serviço",
-      image: "" // Caminho para imagem (ex: "assets/img/galeria-1.jpg"). Se vazio, exibe o placeholder.
+      image: "./assets/img/antes.jpg" // Caminho para imagem (ex: "assets/img/galeria-1.jpg"). Se vazio, exibe o placeholder.
     },
     {
       label: "Durante o atendimento",
-      image: "" // Caminho para imagem (ex: "assets/img/galeria-2.jpg"). Se vazio, exibe o placeholder.
+      image: "./assets/img/durante.jpg" // Caminho para imagem (ex: "assets/img/galeria-2.jpg"). Se vazio, exibe o placeholder.
     },
     {
       label: "Serviço finalizado",
-      image: "" // Caminho para imagem (ex: "assets/img/galeria-3.jpg"). Se vazio, exibe o placeholder.
+      image: "./assets/img/depois.jpg" // Caminho para imagem (ex: "assets/img/galeria-3.jpg"). Se vazio, exibe o placeholder.
     }
   ],
 
   // Avaliações dos Clientes (Depoimentos)
   // NOTA IMPORTANTE: Substituir por avaliações reais antes da publicação final.
-  testimonials: [
-    {
-      name: "Carlos Silva",
-      city: "Sua Cidade",
-      text: "Atendimento rápido e serviço muito bem executado. Resolveram o problema de forma muito profissional e limpa.",
-      rating: 5
-    },
-    {
-      name: "Mariana Souza",
-      city: "Sua Cidade",
-      text: "Equipe extremamente educada, pontual e profissional. Preço justo e ótimo atendimento no pós-serviço.",
-      rating: 5
-    },
-    {
-      name: "Pedro Rodrigues",
-      city: "Sua Cidade",
-      text: "Resolveu o problema com muita agilidade. Equipe técnica muito bem preparada.",
-      rating: 5
-    }
-  ],
+  // testimonials: [
+  //   {
+  //     name: "Carlos Silva",
+  //     city: "Sua Cidade",
+  //     text: "Atendimento rápido e serviço muito bem executado. Resolveram o problema de forma muito profissional e limpa.",
+  //     rating: 5
+  //   },
+  //   {
+  //     name: "Mariana Souza",
+  //     city: "Sua Cidade",
+  //     text: "Equipe extremamente educada, pontual e profissional. Preço justo e ótimo atendimento no pós-serviço.",
+  //     rating: 5
+  //   },
+  //   {
+  //     name: "Pedro Rodrigues",
+  //     city: "Sua Cidade",
+  //     text: "Resolveu o problema com muita agilidade. Equipe técnica muito bem preparada.",
+  //     rating: 5
+  //   }
+  // ],
 
   // Perguntas Frequentes (FAQ)
   faq: [
     {
       question: "Como solicito atendimento?",
-      answer: "Você pode entrar em contato diretamente pelo WhatsApp ou nos ligar pelo telefone de plantão."
+      answer: "Você pode entrar em contato diretamente pelo WhatsApp."
     },
     {
       question: "Vocês atendem empresas?",
@@ -163,5 +189,81 @@ const siteConfig = {
       question: "Qual região de atendimento?",
       answer: "Atendemos Sua Cidade e Região com equipe local de prontidão."
     }
-  ]
+  ],
+
+  trustBar: [
+    "Atendimento rápido",
+    "Equipe especializada",
+    "Orçamento sem compromisso",
+    "Atendimento residencial e empresarial"
+  ],
+
+  beforeAfter: [
+    {
+      title: "Limpeza de caixa de gordura",
+      beforeImage: "./assets/img/antes.jpg",
+      afterImage: "./assets/img/depois.jpg",
+      beforeAlt: "Situação antes da limpeza da caixa de gordura",
+      afterAlt: "Resultado após a limpeza da caixa de gordura"
+    },
+    {
+      title: "Desentupimento de ralo",
+      beforeImage: "",
+      afterImage: "",
+      beforeAlt: "Ralo antes do desentupimento",
+      afterAlt: "Ralo após o desentupimento"
+    }
+  ],
+
+  about: {
+    eyebrow: "Quem Somos",
+    title: "Atendimento profissional em Santa Maria e Região",
+    paragraphs: [
+      "A Desentupidora J.E. atua em Santa Maria e Região oferecendo atendimento rápido e profissional para residências, empresas e condomínios.",
+      "Nosso compromisso é resolver cada problema com qualidade, transparência e agilidade."
+    ],
+    image: "",
+    imageAlt: "Equipe ou veículo da Desentupidora J.E."
+  },
+
+  equipment: [
+    {
+      title: "Hidrojato",
+      description: "Equipamento de alta pressão para limpeza e desobstrução de tubulações.",
+      image: "./assets/img/equipamentos.jpeg",
+      imageAlt: "Equipamento de hidrojato"
+    },
+    {
+      title: "Máquina rotativa",
+      description: "Equipamento profissional para remoção de obstruções em tubulações.",
+      image: "",
+      imageAlt: "Máquina rotativa para desentupimento"
+    },
+    {
+      title: "Ferramentas profissionais",
+      description: "Ferramentas adequadas para serviços hidráulicos, elétricos e manutenção.",
+      image: "",
+      imageAlt: "Ferramentas profissionais"
+    },
+    {
+      title: "Veículo de atendimento",
+      description: "Veículo preparado para deslocamento rápido em Santa Maria e Região.",
+      image: "./assets/img/veiculo.jpeg",
+      imageAlt: "Veículo de atendimento da empresa"
+    }
+  ],
+
+  faqCta: {
+    title: "Ainda ficou com dúvidas?",
+    description: "Fale diretamente conosco e explique o que está acontecendo.",
+    buttonText: "Conversar agora",
+    whatsappMessage: "Olá, ainda tenho algumas dúvidas e gostaria de conversar."
+  },
+
+  finalCta: {
+    title: "Precisa de atendimento agora?",
+    description: "Entre em contato e receba atendimento rápido em Santa Maria e Região.",
+    mascotImage: "./assets/img/mascote.png",
+    mascotAlt: "Mascote da Desentupidora J.E."
+  }
 };

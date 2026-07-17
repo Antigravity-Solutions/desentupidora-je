@@ -208,8 +208,8 @@ const siteConfig = {
     },
     {
       title: "Desentupimento de ralo",
-      beforeImage: "",
-      afterImage: "",
+      beforeImage: "assets/img/antes.jpg",
+      afterImage: "assets/img/depois.jpg",
       beforeAlt: "Ralo antes do desentupimento",
       afterAlt: "Ralo após o desentupimento"
     }
@@ -234,15 +234,9 @@ const siteConfig = {
       imageAlt: "Equipamento de hidrojato"
     },
     {
-      title: "Máquina rotativa",
-      description: "Equipamento profissional para remoção de obstruções em tubulações.",
-      image: "",
-      imageAlt: "Máquina rotativa para desentupimento"
-    },
-    {
       title: "Ferramentas profissionais",
       description: "Ferramentas adequadas para serviços hidráulicos, elétricos e manutenção.",
-      image: "",
+      image: "assets/img/equipamentos.jpeg",
       imageAlt: "Ferramentas profissionais"
     },
     {

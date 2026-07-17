@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     /* ==========================================================================
        FALLBACK CONFIGURATION (In case siteConfig keys are missing or undefined)
        ========================================================================== */
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const keys = path.split('.');
         let current = config;
         let fallback = defaultFallbackConfig;
-        
+
         for (const key of keys) {
             if (current && current[key] !== undefined) {
                 current = current[key];
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.title = getConfigValue('seo.title');
-    
+
     function setMetaTag(name, property, value) {
         let element;
         if (name) {
@@ -183,13 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!schemaScript) {
         schemaScript = document.createElement('script');
         schemaScript.type = 'application/ld+json';
-        
+
         const businessName = getConfigValue('business.name');
         const phonePrimary = getConfigValue('business.phonePrimary');
         const city = getConfigValue('business.city');
         const region = getConfigValue('business.region');
         const heroImg = getConfigValue('hero.image');
-        
+
         const origin = window.location.origin && window.location.origin !== 'null' ? window.location.origin : '';
         const schemaData = {
             "@context": "https://schema.org",
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "areaServed": region,
             "url": window.location.href.split('?')[0].split('#')[0]
         };
-        
+
         schemaScript.text = JSON.stringify(schemaData);
         document.head.appendChild(schemaScript);
     }
@@ -220,21 +220,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const navList = document.getElementById('navigation-list');
         if (!navList) return;
         navList.innerHTML = '';
-        
+
         let navigation = getConfigValue('navigation');
         if (!Array.isArray(navigation) || navigation.length === 0) {
             navigation = defaultFallbackConfig.navigation;
         }
-        
+
         navigation.forEach(item => {
             if (!item || !item.label || !item.target) return;
-            
+
             const li = document.createElement('li');
             const a = document.createElement('a');
             a.className = 'nav-link';
             a.href = `#${item.target}`;
             a.textContent = item.label;
-            
+
             li.appendChild(a);
             navList.appendChild(li);
         });
@@ -271,10 +271,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (heroMediaContainer) {
             const heroImageSrc = getConfigValue('hero.image');
             const heroImageAlt = getConfigValue('hero.imageAlt') || "Serviços profissionais";
-            
+
             if (heroImageSrc) {
                 heroMediaContainer.innerHTML = `
-                    <img src="${heroImageSrc}" alt="${heroImageAlt}" class="hero-image" width="960" height="1200" loading="eager" fetchpriority="high">
+                    <img src="${heroImageSrc}" alt="${heroImageAlt}" class="hero-image" width="928" height="1152" loading="eager" fetchpriority="high">
                 `;
             } else {
                 heroMediaContainer.innerHTML = `
@@ -298,12 +298,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderTrustBar() {
         const trustBarContainer = document.getElementById('trust-bar-container');
         if (!trustBarContainer) return;
-        
+
         let trustBar = getConfigValue('trustBar');
         if (!Array.isArray(trustBar) || trustBar.length === 0) {
             trustBar = defaultFallbackConfig.trustBar;
         }
-        
+
         trustBarContainer.innerHTML = '';
         trustBar.forEach(item => {
             const div = document.createElement('div');
@@ -317,16 +317,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderBeforeAfter() {
         const beforeAfterGrid = document.getElementById('before-after-grid');
         if (!beforeAfterGrid) return;
-        
+
         let beforeAfter = getConfigValue('beforeAfter');
         if (!Array.isArray(beforeAfter) || beforeAfter.length === 0) {
             beforeAfter = defaultFallbackConfig.beforeAfter;
         }
-        
+
         beforeAfterGrid.innerHTML = '';
         beforeAfter.forEach(item => {
             const titleHTML = item.title ? `<div class="before-after-title">${item.title}</div>` : '';
-            
+
             let beforeHTML = '';
             if (item.beforeImage) {
                 beforeHTML = `<img src="${item.beforeImage}" alt="${item.beforeAlt || 'Antes'}" class="before-after-image" loading="lazy" width="600" height="375">`;
@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
             }
-            
+
             let afterHTML = '';
             if (item.afterImage) {
                 afterHTML = `<img src="${item.afterImage}" alt="${item.afterAlt || 'Depois'}" class="before-after-image" loading="lazy" width="600" height="375">`;
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
             }
-            
+
             const wrapper = document.createElement('div');
             wrapper.className = 'before-after-item-wrapper';
             wrapper.innerHTML = `
@@ -388,18 +388,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderAboutSection() {
         const aboutContent = document.getElementById('about-content');
         if (!aboutContent) return;
-        
+
         let aboutData = getConfigValue('about');
         if (!aboutData) {
             aboutData = defaultFallbackConfig.about;
         }
-        
+
         const eyebrow = aboutData.eyebrow || "Quem Somos";
         const title = aboutData.title || "";
         const paragraphs = Array.isArray(aboutData.paragraphs) ? aboutData.paragraphs : [];
         const image = aboutData.image;
         const imageAlt = aboutData.imageAlt || "Sobre nós";
-        
+
         let mediaHTML = '';
         if (image) {
             mediaHTML = `
@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         }
-        
+
         aboutContent.innerHTML = `
             <div class="about-text-col">
                 <span class="section-subtitle">${eyebrow}</span>
@@ -455,17 +455,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderEquipment() {
         const equipmentGrid = document.getElementById('equipment-grid');
         if (!equipmentGrid) return;
-        
+
         let equipments = getConfigValue('equipment');
         if (!Array.isArray(equipments) || equipments.length === 0) {
             equipments = defaultFallbackConfig.equipment;
         }
-        
+
         equipmentGrid.innerHTML = '';
         equipments.forEach(equip => {
             const card = document.createElement('article');
             card.className = 'equipment-card';
-            
+
             let mediaHTML = '';
             if (equip.image) {
                 mediaHTML = `
@@ -484,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
             }
-            
+
             card.innerHTML = `
                 ${mediaHTML}
                 <div class="equipment-info">
@@ -500,12 +500,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderFaqCta() {
         const faqCtaContainer = document.getElementById('faq-cta');
         if (!faqCtaContainer) return;
-        
+
         let faqCta = getConfigValue('faqCta');
         if (!faqCta) {
             faqCta = defaultFallbackConfig.faqCta;
         }
-        
+
         faqCtaContainer.innerHTML = `
             <p>${faqCta.title || "Ainda ficou com dúvidas?"}</p>
             <span>${faqCta.description || "Entre em contato pelo WhatsApp."}</span>
@@ -522,12 +522,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderFinalCta() {
         const finalCtaContent = document.getElementById('final-cta-content');
         if (!finalCtaContent) return;
-        
+
         let finalCta = getConfigValue('finalCta');
         if (!finalCta) {
             finalCta = defaultFallbackConfig.finalCta;
         }
-        
+
         let mascotHTML = '';
         if (finalCta.mascotImage) {
             mascotHTML = `
@@ -550,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         }
-        
+
         finalCtaContent.innerHTML = `
             <h2>${finalCta.title || "Precisa de atendimento agora?"}</h2>
             <p>${finalCta.description || "Entre em contato e receba atendimento rápido."}</p>
@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const servicesGrid = document.getElementById('services-grid');
         if (!servicesGrid) return;
         servicesGrid.innerHTML = '';
-        
+
         function getServiceIconSVG(title) {
             const lowerTitle = title.toLowerCase();
             if (lowerTitle.includes('resid') || lowerTitle.includes('casa') || lowerTitle.includes('domés')) {
@@ -683,11 +683,15 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryGrid.appendChild(card);
         });
     }
+    // 12. Location and Google Maps Renderer
+    function renderLocation() {
+        const titleEl = document.getElementById('location-title');
+        const descEl = document.getElementById('location-description');
+        if (titleEl) titleEl.textContent = getConfigValue('location.title') || 'Área de Atendimento';
+        if (descEl) descEl.textContent = getConfigValue('location.description') || 'Atendemos Santa Maria e região.';
 
-    // 12. Location List and Google Maps Renderer
-    function renderLocationAndMap() {
-        const city = getConfigValue('business.city');
-        const region = getConfigValue('business.region');
+        const city = getConfigValue('business.city') || 'Santa Maria';
+        const region = getConfigValue('business.region') || 'Santa Maria';
         const locationListContainer = document.getElementById('location-list-container');
         if (locationListContainer) {
             locationListContainer.innerHTML = `
@@ -697,16 +701,28 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
 
-        const mapEmbed = getConfigValue('business.googleMapsEmbed');
+        const mapsEmbedUrl = getConfigValue('location.mapsEmbedUrl');
+        const mapsExternalUrl = getConfigValue('location.mapsExternalUrl');
+        const address = getConfigValue('location.address');
         const mapWrapper = document.getElementById('map-wrapper');
+
         if (mapWrapper) {
-            if (mapEmbed) {
-                if (mapEmbed.startsWith('<iframe')) {
-                    mapWrapper.innerHTML = mapEmbed;
-                    const iframe = mapWrapper.querySelector('iframe');
-                    if (iframe) iframe.className = 'map-iframe';
+            if (mapsEmbedUrl) {
+                if (mapsEmbedUrl.trim().startsWith('<iframe')) {
+                    const srcMatch = mapsEmbedUrl.match(/src=["']([^"']+)["']/);
+                    const iframeSrc = srcMatch ? srcMatch[1] : '';
+                    if (iframeSrc) {
+                        mapWrapper.innerHTML = `<iframe src="${iframeSrc}" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Atendimento"></iframe>`;
+                    } else {
+                        mapWrapper.innerHTML = mapsEmbedUrl;
+                        const iframe = mapWrapper.querySelector('iframe');
+                        if (iframe) {
+                            iframe.className = 'map-iframe';
+                            if (!iframe.getAttribute('title')) iframe.setAttribute('title', 'Mapa de Atendimento');
+                        }
+                    }
                 } else {
-                    mapWrapper.innerHTML = `<iframe src="${mapEmbed}" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+                    mapWrapper.innerHTML = `<iframe src="${mapsEmbedUrl}" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Atendimento"></iframe>`;
                 }
             } else {
                 mapWrapper.innerHTML = `
@@ -720,6 +736,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                 `;
+            }
+        }
+
+        // Render address and external link caption
+        const mapCaption = document.querySelector('.map-caption');
+        if (mapCaption) {
+            let captionHTML = '';
+            if (address) {
+                captionHTML += `<span>📍 ${address}</span>`;
+            }
+            if (mapsExternalUrl) {
+                captionHTML += `<br><a href="${mapsExternalUrl}" target="_blank" rel="noopener noreferrer" class="map-external-link">Visualizar endereço no Google Maps</a>`;
+            }
+            if (captionHTML) {
+                mapCaption.innerHTML = captionHTML;
             }
         }
     }
@@ -837,7 +868,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        INTERACTIVE INITIALIZERS
        ========================================================================== */
-    
+
     // Header Mobile Navigation Control
     function initHeaderNavigation() {
         const menuToggle = document.getElementById('menuToggle');
@@ -904,17 +935,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!Array.isArray(navigation) || navigation.length === 0) {
             navigation = defaultFallbackConfig.navigation;
         }
-        
+
         const targets = navigation.map(item => item.target).filter(Boolean);
         const observedSections = [];
-        
+
         targets.forEach(target => {
             const el = document.getElementById(target);
             if (el) observedSections.push(el);
         });
-        
+
         if (observedSections.length === 0) return;
-        
+
         const navObserverOptions = {
             root: null,
             rootMargin: '-20% 0px -60% 0px',
@@ -972,7 +1003,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        INITIALIZATION SEQUENCE
        ========================================================================== */
-    
+
     // 1. Dynamic Rendering (Must run first)
     renderNavigation();
     renderHeroImage();
@@ -986,7 +1017,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderServices();
     renderTrustItems();
     renderGallery();
-    renderLocationAndMap();
+    renderLocation();
     renderTestimonials();
     renderFaq();
     renderFooterTrust();

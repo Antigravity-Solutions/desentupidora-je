@@ -23,14 +23,22 @@ const siteConfig = {
     slogan: "Atendimento rápido, profissional e confiável.",
     city: "Santa Maria - RS",
     region: "Santa Maria e Região",
-    phonePrimary: "(55) 996766820",
+    phonePrimary: "(55) 99676-6820",
     //phoneSecondary: "(55) 996766820",
     phonePrimaryRaw: "55996766820",
     whatsappRaw: "55996766820",
     whatsappMessage: "Olá, preciso de atendimento. (Via Site)",
     instagram: "@desentupidora_je",
-    instagramUrl: "https://www.instagram.com/desentupidora.je/",
-    googleMapsEmbed: "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.807492396557!2d-53.82725832355695!3d-29.667360113894663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95023355e5b9b86f%3A0x77aa1a7f551a1bd2!2sR.%20Nahir%20Zambrano%20da%20Costa%2C%208%20-%20Ch%C3%A1cara%20das%20Flores%2C%20Santa%20Maria%20-%20RS%2C%2097043-742!5e0!3m2!1spt-BR!2sbr!4v1784155405285!5m2!1spt-BR!2sbr' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='strict-origin-when-cross-origin'></iframe>" // Iframe do Google Maps (Opcional - se vazio, exibe o placeholder)
+    instagramUrl: "https://www.instagram.com/desentupidora.je/"
+  },
+
+  // Configurações de Localização e Mapa
+  location: {
+    title: "Atendimento em Santa Maria e Região",
+    description: "Atendemos residências, empresas, condomínios e chácaras.",
+    address: "Rua Nahir Zambrano da Costa, 8 - Chácara das Flores, Santa Maria - RS",
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.807492396557!2d-53.82725832355695!3d-29.667360113894663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95023355e5b9b86f%3A0x77aa1a7f551a1bd2!2sR.%20Nahir%20Zambrano%20da%20Costa%2C%208%20-%20Ch%C3%A1cara%20das%20Flores%2C%20Santa%20Maria%20-%20RS%2C%2097043-742!5e0!3m2!1spt-BR!2sbr!4v1784155405285!5m2!1spt-BR!2sbr",
+    mapsExternalUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Nahir+Zambrano+da+Costa+8+Santa+Maria+RS"
   },
 
   // Tema de Cores do Site (Opcional)
@@ -120,7 +128,7 @@ const siteConfig = {
     },
     {
       title: "Atendimento local",
-      description: "Atuação em Sua Cidade e Região."
+      description: "Atuação em Santa Maria e Região."
     },
     {
       title: "Orçamento objetivo",
@@ -153,19 +161,19 @@ const siteConfig = {
   // testimonials: [
   //   {
   //     name: "Carlos Silva",
-  //     city: "Sua Cidade",
+  //     city: "Santa Maria - RS",
   //     text: "Atendimento rápido e serviço muito bem executado. Resolveram o problema de forma muito profissional e limpa.",
   //     rating: 5
   //   },
   //   {
   //     name: "Mariana Souza",
-  //     city: "Sua Cidade",
+  //     city: "Santa Maria - RS",
   //     text: "Equipe extremamente educada, pontual e profissional. Preço justo e ótimo atendimento no pós-serviço.",
   //     rating: 5
   //   },
   //   {
   //     name: "Pedro Rodrigues",
-  //     city: "Sua Cidade",
+  //     city: "Santa Maria - RS",
   //     text: "Resolveu o problema com muita agilidade. Equipe técnica muito bem preparada.",
   //     rating: 5
   //   }
@@ -187,7 +195,7 @@ const siteConfig = {
     },
     {
       question: "Qual região de atendimento?",
-      answer: "Atendemos Sua Cidade e Região com equipe local de prontidão."
+      answer: "Atendemos Santa Maria e Região com equipe local de prontidão."
     }
   ],
 
@@ -201,8 +209,8 @@ const siteConfig = {
   beforeAfter: [
     {
       title: "Limpeza de caixa de gordura",
-      beforeImage: "./assets/img/antes.jpg",
-      afterImage: "./assets/img/depois.jpg",
+      beforeImage: "./assets/img/caixa_gordura_antes.jpeg",
+      afterImage: "./assets/img/caixa_gordura_1.jpeg",
       beforeAlt: "Situação antes da limpeza da caixa de gordura",
       afterAlt: "Resultado após a limpeza da caixa de gordura"
     },
@@ -222,7 +230,7 @@ const siteConfig = {
       "A Desentupidora J.E. atua em Santa Maria e Região oferecendo atendimento rápido e profissional para residências, empresas e condomínios.",
       "Nosso compromisso é resolver cada problema com qualidade, transparência e agilidade."
     ],
-    image: "",
+    image: "assets/img/veiculo.jpeg",
     imageAlt: "Equipe ou veículo da Desentupidora J.E."
   },
 
@@ -230,7 +238,7 @@ const siteConfig = {
     {
       title: "Hidrojato",
       description: "Equipamento de alta pressão para limpeza e desobstrução de tubulações.",
-      image: "./assets/img/equipamentos.jpeg",
+      image: "./assets/img/hidrojato.jpeg",
       imageAlt: "Equipamento de hidrojato"
     },
     {

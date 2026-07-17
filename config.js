@@ -23,6 +23,7 @@ const siteConfig = {
     slogan: "Atendimento rápido, profissional e confiável.",
     city: "Santa Maria - RS",
     region: "Santa Maria e Região",
+    cnpj: "CNPJ 44.921.652/0001-34",
     phonePrimary: "(55) 99676-6820",
     //phoneSecondary: "(55) 996766820",
     phonePrimaryRaw: "55996766820",
@@ -63,7 +64,7 @@ const siteConfig = {
     title: "Desentupimento e Serviços de Manutenção 24 Horas",
     subtitle: "Soluções rápidas para residências, empresas e condomínios.",
     description: "Desentupimentos, Eletricista, Encanador, Infiltrações, Limpeza de pátios e prédios, Limpeza de Caixa d'água e de calhas, Pintura e mão de obras em geral.",
-    image: "assets/img/banner-hero.png", // Caminho para imagem real (ex: "assets/img/hero.jpg"). Se vazio, exibe o placeholder.
+    image: "assets/img/banner-hero.jpg", // Caminho para imagem real (ex: "assets/img/hero.jpg"). Se vazio, exibe o placeholder.
     imageAlt: "Serviços profissionais da Desentupidora J.E."
   },
 
@@ -84,31 +85,6 @@ const siteConfig = {
       title: "Desentupimento",
       description: "Desentupimento de pias, ralos, vasos sanitários e caixas de gordura.",
       featured: true
-    },
-    {
-      title: "Limpeza de calhas",
-      description: "Limpeza de calhas residenciais e comerciais.",
-      featured: false
-    },
-    {
-      title: "Limpeza de pátios",
-      description: "Limpeza de pátios residenciais e comerciais.",
-      featured: false
-    },
-    {
-      title: "Pintura",
-      description: "Pintura de casas, prédios e muros.",
-      featured: false
-    },
-    {
-      title: "Eletricista",
-      description: "Serviços de eletricista residencial e comercial.",
-      featured: false
-    },
-    {
-      title: "Encanador",
-      description: "Serviços de encanador residencial e comercial.",
-      featured: false
     }
   ],
 
@@ -230,7 +206,7 @@ const siteConfig = {
       "A Desentupidora J.E. atua em Santa Maria e Região oferecendo atendimento rápido e profissional para residências, empresas e condomínios.",
       "Nosso compromisso é resolver cada problema com qualidade, transparência e agilidade."
     ],
-    image: "assets/img/veiculo.jpeg",
+    image: "assets/img/banner_about.jpg",
     imageAlt: "Equipe ou veículo da Desentupidora J.E."
   },
 
@@ -238,20 +214,14 @@ const siteConfig = {
     {
       title: "Hidrojato",
       description: "Equipamento de alta pressão para limpeza e desobstrução de tubulações.",
-      image: "./assets/img/hidrojato.jpeg",
+      image: "./assets/img/hidrojato.jpg",
       imageAlt: "Equipamento de hidrojato"
     },
     {
       title: "Ferramentas profissionais",
       description: "Ferramentas adequadas para serviços hidráulicos, elétricos e manutenção.",
-      image: "assets/img/equipamentos.jpeg",
+      image: "assets/img/equipamentos.jpg",
       imageAlt: "Ferramentas profissionais"
-    },
-    {
-      title: "Veículo de atendimento",
-      description: "Veículo preparado para deslocamento rápido em Santa Maria e Região.",
-      image: "./assets/img/veiculo.jpeg",
-      imageAlt: "Veículo de atendimento da empresa"
     }
   ],
 

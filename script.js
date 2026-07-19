@@ -235,8 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const phonePrimaryRaw = getConfigValue('business.phonePrimaryRaw');
         const region = getConfigValue('business.region');
 
-        // Normalize phone to format '+5555996766820'
-        const normalizedPhone = phonePrimaryRaw ? `+${phonePrimaryRaw}` : phonePrimary;
+        const normalizedPhone = phonePrimaryRaw ? (phonePrimaryRaw.startsWith('+') ? phonePrimaryRaw : '+' + phonePrimaryRaw) : phonePrimary;
 
         const schemaData = {
             "@context": "https://schema.org",
@@ -269,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.head.appendChild(schemaScript);
         } catch (e) {
             console.error('Error generating JSON-LD Schema:', e);
-            throw e; // Rethrow to avoid hiding the failure
+            throw e; // Rethrow to avoid silent failures
         }
     }
 

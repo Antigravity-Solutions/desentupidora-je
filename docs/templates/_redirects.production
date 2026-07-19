@@ -5,7 +5,7 @@
 # Substitua {{PRODUCTION_DOMAIN}} pelo domínio definitivo (ex: desentupidoraje.com.br).
 
 # Redirecionar a URL provisória pages.dev para o domínio principal
-https://desentupidora-je.pages.dev/* https://{{PRODUCTION_DOMAIN}}/:splat 301
+https://desentupidoraje.pages.dev/* https://{{PRODUCTION_DOMAIN}}/:splat 301
 
 # Forçar www para sem-www (ou vice-versa, conforme decisão de SEO)
 # www.{{PRODUCTION_DOMAIN}}/* https://{{PRODUCTION_DOMAIN}}/:splat 301

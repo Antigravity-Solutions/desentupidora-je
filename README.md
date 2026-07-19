@@ -124,3 +124,26 @@ Realize este checklist completo antes de entregar o site para o cliente final:
 - [ ] **SEO**: Revisar o título da página e a descrição de metatag para indexação no Google.
 - [ ] **Responsividade**: Testar a abertura do site em computadores, tablets e smartphones de tamanhos variados.
 - [ ] **Hospedagem**: Concluir o deploy na Vercel ou hospedagem correspondente.
+
+---
+
+## 🔧 Preparação para Conexão do Domínio & Deploy
+
+O projeto está estruturado em modo **staging** para testes e homologação no Cloudflare Pages, com bloqueio automático de indexação.
+
+### Alternando para Produção
+
+Assim que o domínio final estiver configurado no **Registro.br**, realize os seguintes passos no `config.js`:
+
+1. Abra o arquivo `config.js` e localize o objeto `deployment`.
+2. Altere o `environment` para `"production"` e `allowIndexing` para `true`.
+3. Preencha `productionDomain` com o domínio do cliente (ex: `desentupidoraje.com.br`) e `productionUrl` com a URL completa (ex: `https://desentupidoraje.com.br`).
+4. Faça commit e deploy das alterações.
+
+### Arquivos de Produção Adicionais
+
+Na pasta `docs/templates/`, encontram-se os arquivos que deverão ser ajustados e movidos para a raiz do repositório ao realizar a publicação final:
+- **`robots.production.txt`**: Mova para `/robots.txt` e substitua `{{PRODUCTION_URL}}` pela URL oficial.
+- **`sitemap.production.xml`**: Mova para `/sitemap.xml` e substitua `{{PRODUCTION_URL}}` pela URL oficial.
+- **`_redirects.production`**: Mova para `/_redirects` para configurar as regras de redirecionamento no Cloudflare Pages.
+

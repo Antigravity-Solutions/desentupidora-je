@@ -163,20 +163,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Set SEO Meta
     setMetaTag('description', null, getConfigValue('seo.description'));
-    setMetaTag('keywords', null, getConfigValue('seo.keywords'));
     setMetaTag(null, 'og:title', getConfigValue('seo.title'));
     setMetaTag(null, 'og:description', getConfigValue('seo.description'));
     setMetaTag('twitter:title', null, getConfigValue('seo.title'));
     setMetaTag('twitter:description', null, getConfigValue('seo.description'));
 
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-        canonicalLink = document.createElement('link');
-        canonicalLink.rel = 'canonical';
-        document.head.appendChild(canonicalLink);
+    // Environment and URL Control Logic
+    const env = getConfigValue('deployment.environment');
+    const productionUrl = getConfigValue('deployment.productionUrl');
+    const allowIndexing = getConfigValue('deployment.allowIndexing');
+    const pagesUrl = getConfigValue('deployment.pagesUrl');
+
+    const isProd = (env === 'production' && productionUrl);
+
+    // Robots meta control
+    if (isProd && allowIndexing) {
+        setMetaTag('robots', null, 'index, follow');
+    } else {
+        setMetaTag('robots', null, 'noindex, nofollow');
     }
-    canonicalLink.href = window.location.href.split('?')[0].split('#')[0];
+
+    // Canonical link control
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (isProd) {
+        if (!canonicalLink) {
+            canonicalLink = document.createElement('link');
+            canonicalLink.rel = 'canonical';
+            document.head.appendChild(canonicalLink);
+        }
+        canonicalLink.href = productionUrl.endsWith('/') ? productionUrl : (productionUrl + '/');
+    } else {
+        if (canonicalLink) {
+            canonicalLink.remove();
+        }
+    }
+
+    // Open Graph URL control
+    if (isProd) {
+        setMetaTag(null, 'og:url', productionUrl.endsWith('/') ? productionUrl : (productionUrl + '/'));
+    } else {
+        let ogUrlTag = document.querySelector('meta[property="og:url"]');
+        if (ogUrlTag) {
+            ogUrlTag.remove();
+        }
+    }
+
+    // Open Graph / Twitter Image absolute URL control
+    let heroImg = getConfigValue('hero.image') || 'assets/img/og-image.webp';
+    heroImg = heroImg.replace(/^\.?\//, ''); // Clean leading dot/slash
+
+    if (isProd) {
+        const absoluteImgUrl = productionUrl.endsWith('/') ? (productionUrl + heroImg) : (productionUrl + '/' + heroImg);
+        setMetaTag(null, 'og:image', absoluteImgUrl);
+        setMetaTag('twitter:image', null, absoluteImgUrl);
+    } else if (pagesUrl) {
+        const absoluteStagingImgUrl = pagesUrl.endsWith('/') ? (pagesUrl + heroImg) : (pagesUrl + '/' + heroImg);
+        setMetaTag(null, 'og:image', absoluteStagingImgUrl);
+        setMetaTag('twitter:image', null, absoluteStagingImgUrl);
+    }
 
     // Set JSON-LD Schema.org LocalBusiness
     let schemaScript = document.querySelector('script[type="application/ld+json"]');
@@ -186,29 +232,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const businessName = getConfigValue('business.name');
         const phonePrimary = getConfigValue('business.phonePrimary');
-        const city = getConfigValue('business.city');
+        const phonePrimaryRaw = getConfigValue('business.phonePrimaryRaw');
         const region = getConfigValue('business.region');
-        const heroImg = getConfigValue('hero.image');
 
-        const origin = window.location.origin && window.location.origin !== 'null' ? window.location.origin : '';
+        // Normalize phone to format '+5555996766820'
+        const normalizedPhone = phonePrimaryRaw ? `+${phonePrimaryRaw}` : phonePrimary;
+
         const schemaData = {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": businessName,
-            "image": heroImg ? (origin + "/" + heroImg) : (origin + "/assets/img/share-preview.jpg"),
-            "telephone": phonePrimary,
+            "description": getConfigValue('seo.description'),
+            "image": isProd ? (productionUrl.endsWith('/') ? productionUrl + heroImg : productionUrl + '/' + heroImg) : (pagesUrl ? (pagesUrl.endsWith('/') ? pagesUrl + heroImg : pagesUrl + '/' + heroImg) : ''),
+            "telephone": normalizedPhone,
             "address": {
                 "@type": "PostalAddress",
-                "addressLocality": city,
+                "addressLocality": "Santa Maria",
                 "addressRegion": "RS",
                 "addressCountry": "BR"
             },
-            "areaServed": region,
-            "url": window.location.href.split('?')[0].split('#')[0]
+            "areaServed": region
         };
 
-        schemaScript.text = JSON.stringify(schemaData);
-        document.head.appendChild(schemaScript);
+        const instagramUrl = getConfigValue('business.instagramUrl');
+        if (instagramUrl && instagramUrl !== '#') {
+            schemaData.sameAs = [instagramUrl];
+        }
+
+        if (isProd) {
+            schemaData.url = productionUrl.endsWith('/') ? productionUrl : (productionUrl + '/');
+        }
+
+        // Validate structure before serialization (avoid syntax issues)
+        try {
+            schemaScript.text = JSON.stringify(schemaData, null, 2);
+            document.head.appendChild(schemaScript);
+        } catch (e) {
+            console.error('Error generating JSON-LD Schema:', e);
+            throw e; // Rethrow to avoid hiding the failure
+        }
     }
 
     /* ==========================================================================

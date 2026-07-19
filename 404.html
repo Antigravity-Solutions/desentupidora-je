@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Não Encontrada | Desentupidora J.E.</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    
+    <style>
+        :root {
+            --color-primary: #0a2240;
+            --color-secondary: #d90429;
+            --color-text-dark: #2b2d42;
+            --color-text-muted: #5e6073;
+            --color-bg-light: #ffffff;
+            --color-bg-alt: #f8f9fa;
+            --color-border: #e9ecef;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --transition-fast: 0.2s ease;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text-dark);
+            background-color: var(--color-bg-light);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Estático */
+        .main-header {
+            background-color: var(--color-bg-light);
+            height: 80px;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            color: var(--color-secondary);
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Conteúdo Principal */
+        main {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .error-card {
+            background-color: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 60px 40px;
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .error-title {
+            font-size: 1.75rem;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .error-text {
+            color: var(--color-text-muted);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+            background-color: var(--color-primary);
+            color: #ffffff;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+            background-color: var(--color-secondary);
+            box-shadow: 0 4px 10px rgba(217, 4, 41, 0.2);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--color-primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Fixo Estático -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 14V17C4 18.1046 4.89543 19 6 19H18C19.1046 19 20 18.1046 20 17V14" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" />
+                    <path
+                        d="M12 2C8.5 6.5 6 9.5 6 12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12C18 9.5 15.5 6.5 12 2Z"
+                        fill="currentColor" />
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-title">DESENTUPIDORA J.E</span>
+                    <span class="logo-subtitle">Serviços Sanitários</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal 404 -->
+    <main>
+        <div class="error-card">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Página Não Encontrada</h1>
+            <p class="error-text">Desculpe, o conteúdo que você está procurando não existe, foi movido ou está temporariamente indisponível.</p>
+            <a href="index.html" class="btn">Voltar para o Início</a>
+        </div>
+    </main>
+
+    <!-- Footer Estático -->
+    <footer>
+        <div class="container" style="justify-content: center;">
+            <p>&copy; 2026 DESENTUPIDORA J.E. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

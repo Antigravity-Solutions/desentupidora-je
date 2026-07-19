@@ -6,6 +6,15 @@
  */
 
 const siteConfig = {
+  // Configurações de Deploy (staging / production)
+  deployment: {
+    environment: "staging",
+    productionDomain: "",
+    productionUrl: "",
+    pagesUrl: "https://desentupidoraje.pages.dev",
+    allowIndexing: false
+  },
+
   // Configuração da navegação principal do header
   navigation: [
     { label: "Início", target: "inicio" },
@@ -26,8 +35,8 @@ const siteConfig = {
     cnpj: "CNPJ 44.921.652/0001-34",
     phonePrimary: "(55) 99676-6820",
     //phoneSecondary: "(55) 996766820",
-    phonePrimaryRaw: "55996766820",
-    whatsappRaw: "55996766820",
+    phonePrimaryRaw: "5555996766820",
+    whatsappRaw: "5555996766820",
     whatsappMessage: "Olá, preciso de atendimento. (Via Site)",
     instagram: "@desentupidora_je",
     instagramUrl: "https://www.instagram.com/desentupidora.je/"
@@ -235,7 +244,7 @@ const siteConfig = {
   finalCta: {
     title: "Precisa de atendimento agora?",
     description: "Entre em contato e receba atendimento rápido em Santa Maria e Região.",
-    mascotImage: "./assets/img/mascote.png",
+    mascotImage: "./assets/img/mascote.webp",
     mascotAlt: "Mascote da Desentupidora J.E."
   }
 };

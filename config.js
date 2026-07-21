@@ -15,6 +15,11 @@ const siteConfig = {
     allowIndexing: true
   },
 
+  // Configuração do GTM (Google Tag Manager)
+  analytics: {
+    googleTagManagerId: ""
+  },
+
   // Configuração da navegação principal do header
   navigation: [
     { label: "Início", target: "inicio" },

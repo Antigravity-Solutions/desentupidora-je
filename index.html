@@ -5,6 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Configurações de Deploy (staging / production) -->
+    <script src="config.js"></script>
+
+    <!-- Google Tag Manager (GTM) -->
+    <script>
+
+        (() => {
+            const gtmId = siteConfig?.analytics?.googleTagManagerId?.trim();
+            const isValidGtmId = /^GTM-[A-Z0-9]+$/i.test(gtmId || "");
+
+            if (!isValidGtmId) {
+                console.info("Google tag manager não carregado: ID ausente ou inválido.");
+                return;
+            }
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                "gtm.start" : new Date().getTime(),
+                event: "gtm.js"
+            });
+
+            const firstScript = document.getElementsByTagName("script")[0];
+            const gtmScript = document.createElement("script");
+            gtmScript.async = true;
+            gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
+
+            firstScript.parentNode.insertBefore(gtmScript, firstScript);
+            
+
+        })();
+
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- SEO e Metatags -->
     <title>Desentupidora em Santa Maria | Desentupidora J.E.</title>
     <meta name="description" content="Desentupimento e serviços de manutenção em Santa Maria e região para residências, empresas e condomínios.">
@@ -34,9 +68,23 @@
 
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <!-- Manter o ID sincronizado com analytics.googleTagManagerId -->
+    <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-ABC1234"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+            title="Google Tag Manager">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Header Fixo -->
     <header class="main-header">
@@ -443,7 +491,6 @@
     </div>
 
     <!-- JavaScript Data and Controller (Sem ES modules, carrega sequencialmente) -->
-    <script src="config.js"></script>
     <script src="script.js" defer></script>
 </body>
 

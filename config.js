@@ -85,6 +85,12 @@ const siteConfig = {
   // Lista de Serviços Oferecidos
   // "featured: true" destaca o card no layout (estilo "Mais Procurado")
   services: [
+    
+    {
+      title: "Desentupimento de esgoto em geral",
+      description: "Desentupimento de pias, ralos, vasos sanitários e caixas de gordura.",
+      featured: true
+    },
     {
       title: "Limpeza de fossas",
       description: "Limpeza de fossas sépticas e sumidouros.",
@@ -94,12 +100,8 @@ const siteConfig = {
       title: "Limpeza de caixas d'água",
       description: "Limpeza de caixas d'água residenciais e comerciais.",
       featured: true
-    },
-    {
-      title: "Desentupimento",
-      description: "Desentupimento de pias, ralos, vasos sanitários e caixas de gordura.",
-      featured: true
     }
+    
   ],
 
   // Diferenciais / Por que escolher

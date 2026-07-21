@@ -251,7 +251,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 "addressRegion": "RS",
                 "addressCountry": "BR"
             },
-            "areaServed": region
+            "areaServed": [
+                {
+                "@type": "City",
+                "name": "Santa Maria"
+                },
+                {
+                "@type": "AdministrativeArea",
+                "name": "Região Central do Rio Grande do Sul"
+                }
+            ],
+            "openingHours": "Mo-Su 00:00-23:59"
         };
 
         const instagramUrl = getConfigValue('business.instagramUrl');

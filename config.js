@@ -8,11 +8,11 @@
 const siteConfig = {
   // Configurações de Deploy (staging / production)
   deployment: {
-    environment: "staging",
-    productionDomain: "",
-    productionUrl: "",
+    environment: "production",
+    productionDomain: "desentupidoraje.com.br",
+    productionUrl: "https://desentupidoraje.com.br",
     pagesUrl: "https://desentupidoraje.pages.dev",
-    allowIndexing: false
+    allowIndexing: true
   },
 
   // Configuração da navegação principal do header

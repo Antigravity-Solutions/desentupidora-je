@@ -22,7 +22,7 @@ Este documento registra a conclusão técnica da **Issue #3 — Conectar domíni
 - [x] **Redirecionamento `pages.dev`**: `https://desentupidoraje.pages.dev/` redirecionando via HTTP 301 para a URL oficial.
 - [x] **Ambiente no `config.js`**: `deployment.environment: "production"`, `allowIndexing: true`, `productionUrl: "https://desentupidoraje.com.br"`.
 - [x] **Canonical no HTML**: `<link rel="canonical" href="https://desentupidoraje.com.br/">` presente diretamente no HTML entregue via `curl`.
-- [x] **Indexação Liberada**: `<meta name="robots" content="index, follow">` no HTML e runtime.
+- [x] **Indexação Liberada**: `<meta name="robots" content="index, follow">` presente diretamente no HTML entregue e mantida corretamente após a inicialização do JavaScript.
 - [x] **`robots.txt`**: HTTP 200 contendo `Allow: /` e referenciando o `sitemap.xml` da URL oficial.
 - [x] **`sitemap.xml`**: Publicado na raiz do repositório, retornando HTTP 200 e apontando unicamente para `https://desentupidoraje.com.br/`.
 - [x] **Open Graph & Twitter Card**: URLs absolutas apontando para `https://desentupidoraje.com.br/assets/img/og-image.webp` (HTTP 200).
@@ -51,7 +51,7 @@ TBT: 0 ms
 CLS: 0.037
 ```
 * **Elemento LCP**: `<h1 id="hero-title">` ("Desentupimento e Serviços de Manutenção 24 Horas")
-* **Diagnósticos**: SVG minificado, fontes carregadas sem bloqueio e CSS crítico otimizado.
+* **Diagnósticos relevantes**: não foram identificados bloqueios expressivos de renderização no teste desktop; FCP e LCP permaneceram abaixo de 1 segundo.
 
 ### 📱 Celular (Mobile)
 ```text
@@ -67,7 +67,7 @@ TBT: 630 ms
 CLS: 0
 ```
 * **Elemento LCP**: `<h1 id="hero-title">` ("Desentupimento e Serviços de Manutenção 24 Horas")
-* **Principais Oportunidades & Diagnósticos**: Minificação de CSS/JS legados, otimização de tempo de execução no processador do dispositivo móvel.
+* **Principais Oportunidades & Diagnósticos**: Possível redução e minificação adicional de CSS e JavaScript, otimização de tempo de execução no processador do dispositivo móvel.
 
 ---
 
@@ -100,14 +100,14 @@ Headers validados via `curl -I https://desentupidoraje.com.br/`:
 
 ## 🏷️ 6. Validação do Schema Markup (JSON-LD LocalBusiness)
 
-Validação executada na ferramenta oficial Schema Markup Validator:
+Validação executada no Schema.org Markup Validator:
 
 * **Tipo Detectado**: `LocalBusiness`
 * **Erros**: 0
 * **Avisos**: 0
 * **Telefone Normalizado**: `+5555996766820`
 * **URL**: `https://desentupidoraje.com.br/`
-* **Mesmo As (`sameAs`)**: `https://www.instagram.com/desentupidora.je/`
+* **Perfil relacionado (`sameAs`)**: `https://www.instagram.com/desentupidora.je/`
 * **Endereço**: Santa Maria - RS, BR
 
 ---
@@ -119,6 +119,8 @@ Validação executada na ferramenta oficial Schema Markup Validator:
 * **Status da Propriedade**: Verificado / Ativo
 * **Sitemap Enviado**: `https://desentupidoraje.com.br/sitemap.xml` (Status: **Sucesso**)
 * **Solicitação de Indexação**: Solicitada via Inspeção de URL para `https://desentupidoraje.com.br/`
+> A solicitação de indexação foi enviada com sucesso. A inclusão efetiva nos
+> resultados do Google depende do processamento e rastreamento pelo buscador.
 
 ---
 
@@ -126,18 +128,26 @@ Validação executada na ferramenta oficial Schema Markup Validator:
 
 * **Console**: 0 erros JS, 0 erros CORS, 0 warnings críticos.
 * **Network**: Todos os recursos estáticos (HTML, CSS, JS, WebP, ICO) retornando HTTP 200, sem chamadas inseguras HTTP ou requisições para `pages.dev`.
-* **Links Funcionais**: WhatsApp (`https://wa.me/5555996766820`), Ligação (`tel:5555996766820`), Instagram e Google Maps totalmente validados e operacionais.
+* **Links Funcionais**: WhatsApp (`https://wa.me/5555996766820`), Ligação (`tel:+5555996766820`), Instagram e Google Maps totalmente validados e operacionais.
 
 ---
 
-## 📋 9. Pendências
+## 📋 9. Pendências e melhorias futuras
 
-* **Pendências**: Nenhuma. Todos os critérios de aceite da Issue #3 foram atendidos e verificados.
+Não existem pendências bloqueadoras para produção.
 
+### Melhorias não bloqueadoras
+
+- [ ] Investigar a pontuação de Performance mobile de 76.
+- [ ] Reduzir o Total Blocking Time, atualmente medido em 630 ms.
+- [ ] Avaliar minificação adicional de CSS e JavaScript.
+- [ ] Identificar funções executadas durante a inicialização que possam ser adiadas.
+- [ ] Reexecutar o Lighthouse após futuras otimizações.
+
+Esses itens não impedem a publicação nem o encerramento da Issue #3.
 ---
 
 ### Parecer Final
 
 ```text
 APROVADO PARA PRODUÇÃO
-```

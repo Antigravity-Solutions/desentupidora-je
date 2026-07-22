@@ -1,149 +1,100 @@
-# Landing Page Template - Negócios Locais
+# Landing Page Desentupidora J.E. — Produção
 
-Template HTML/CSS/JS de alto desempenho, responsivo e esteticamente premium para pequenos negócios locais. Baseado na estrutura e layout de alta conversão da Desentupidora J.E., este template é totalmente parametrizável por meio de um único arquivo de configuração (`config.js`).
-
----
-
-## 📂 Estrutura de Arquivos
-
-```text
-landing-page-local-business/
-├── index.html          # Estrutura semântica e esqueleto da página
-├── styles.css          # Estilos premium, variáveis e placeholders
-├── script.js           # Motor de renderização dinâmica e interações
-├── config.js           # Único arquivo de edição (Configurações do cliente)
-├── README.md           # Instruções de personalização e checklist
-└── assets/
-    └── img/            # Pasta destinada às fotos reais do cliente
-```
+Landing page oficial de alto desempenho, responsiva, otimizada para SEO local e pronta para conversão para a **Desentupidora J.E.** em Santa Maria - RS e Região.
 
 ---
 
-## 🛠️ Como Funciona o Template
+## 🌐 Informações de Produção
 
-O template funciona de forma 100% estática e dinâmica:
-1. O navegador carrega o `config.js` que define a constante global `siteConfig`.
-2. Em seguida, o `script.js` lê as informações do `siteConfig` (ou aciona os valores de fallback caso estejam ausentes) e preenche automaticamente o HTML, injeta as metatags de SEO, atualiza a paleta de cores e renderiza os grids (serviços, diferenciais, depoimentos, galeria, FAQs e mapas).
-3. **Não requer backend, build, React ou banco de dados.** Funciona abrindo apenas o `index.html` diretamente no navegador.
-
----
-
-## 👥 Como Criar um Novo Cliente a partir Deste Template
-
-Para criar uma nova landing page para um cliente diferente usando esta base:
-
-1. **Copie a pasta**: Copie a pasta inteira `landing-page-local-business` para um novo diretório (ex: `projeto-cliente-x`).
-2. **Edite o `config.js`**: Abra o arquivo `config.js` na raiz e altere as propriedades do objeto `siteConfig`:
-   - Nome do negócio (`business.name`)
-   - Telefone e WhatsApp (`business.phonePrimary`, `business.whatsappRaw`, etc.)
-   - Serviços prestados (`services`)
-   - Cidade e região atendida (`business.city` e `business.region`)
-   - Cores da marca (`theme.primary`, `theme.secondary`, etc.)
-3. **Insira as fotos do cliente**: Cole as imagens reais do cliente dentro de `assets/img/`.
-4. **Referencie no config.js**: No `config.js`, preencha as chaves de imagem do Hero (`hero.image`) e da Galeria (`gallery[].image`) com o caminho correspondente (ex: `"assets/img/foto-equipe.jpg"`).
-5. **Teste localmente**: Dê dois cliques em `index.html` para abrir a página no navegador e certifique-se de que tudo está perfeito.
+* **URL Oficial**: [https://desentupidoraje.com.br/](https://desentupidoraje.com.br/)
+* **Status**: **APROVADO PARA PRODUÇÃO** (Versão v1.0.0 publicada e ativa)
+* **Ambiente**: Produção (`production`) com indexação liberada em buscadores.
 
 ---
 
-## 🎨 Como Personalizar o Tema de Cores
+## ⚙️ Configuração do Ambiente de Produção
 
-Dentro de `config.js`, a chave `theme` permite alterar instantaneamente a paleta de cores do site:
+A aplicação é configurada centralizadamente no arquivo [`config.js`](config.js):
 
 ```javascript
-theme: {
-  primary: "#0d2c54",     // Cor principal de cabeçalhos e seções escuras
-  secondary: "#c81d25",   // Cor de botões e itens de conversão primários
-  accent: "#ffbe0b",      // Cor de estrelas de avaliação e detalhes
-  whatsapp: "#25d366"     // Cor do botão flutuante de WhatsApp
+deployment: {
+  environment: "production",
+  productionDomain: "desentupidoraje.com.br",
+  productionUrl: "https://desentupidoraje.com.br",
+  pagesUrl: "https://desentupidoraje.pages.dev",
+  allowIndexing: true
 }
 ```
 
-*Nota: Os efeitos de hover dos botões e as variações de cores mais claras/escuras são gerados automaticamente usando funções nativas do CSS (`color-mix`), garantindo uma transição visual perfeita sem configurações manuais adicionais.*
+---
+
+## 🏗️ Arquitetura e Hospedagem
+
+* **Domínio Oficial**: Registrado no Registro.br (`desentupidoraje.com.br`).
+* **Gerenciamento de DNS**: Cloudflare DNS com proxy ativo e HTTPS automático.
+* **Hospedagem**: Cloudflare Pages vinculado ao repositório GitHub.
+* **Repositório**: GitHub (`Antigravity-Solutions/desentupidora-je`).
+* **Estrutura de Domínio & Redirecionamentos (HTTP 301)**:
+  * Domínio principal sem `www`: `https://desentupidoraje.com.br/` (HTTP 200)
+  * `www` redirecionando permanentemente: `https://www.desentupidoraje.com.br/` → `https://desentupidoraje.com.br/` (HTTP 301)
+  * Subdomínio temporário Cloudflare Pages redirecionando permanentemente: `https://desentupidoraje.pages.dev/` → `https://desentupidoraje.com.br/` (HTTP 301)
 
 ---
 
-## 🗺️ Como Inserir o Google Maps Real
+## 🔍 SEO e Indexação
 
-Para substituir o placeholder cinza do mapa pelo mapa de localização real da empresa:
-
-1. Vá ao Google Maps e procure pelo endereço ou nome da empresa.
-2. Clique em **Compartilhar** e selecione a aba **Incorporar um mapa**.
-3. Copie o código HTML gerado (que começa com `<iframe...`).
-4. Cole o código iframe completo ou apenas a URL do atributo `src` na chave `business.googleMapsEmbed` do `config.js`:
-   ```javascript
-   googleMapsEmbed: '<iframe src="https://www.google.com/maps/embed?..." width="600" height="450" ...></iframe>'
-   ```
-5. Salve o arquivo. O `script.js` renderizará automaticamente o mapa real no lugar do placeholder.
-
----
-
-## 🚀 Como Publicar na Vercel (Gratuitamente)
-
-A Vercel é excelente para hospedar landing pages estáticas por ser rápida, segura e grátis.
-
-### Opção 1: Via Vercel Dashboard (Sem Linha de Comando)
-1. Coloque o seu projeto em um repositório no GitHub (ex: repositório privado ou público).
-2. Acesse [vercel.com](https://vercel.com) e crie uma conta gratuita.
-3. Clique em **Add New** > **Project**.
-4. Conecte com o GitHub e selecione o repositório da landing page criada.
-5. Deixe as configurações padrões (o framework será detectado como "Other" e o diretório de build vazio).
-6. Clique em **Deploy**. O site estará no ar em poucos segundos!
-
-### Opção 2: Via Vercel CLI (Direto do Terminal)
-1. Instale a CLI da Vercel globalmente (se tiver o Node.js instalado):
-   ```bash
-   npm install -g vercel
-   ```
-2. Na raiz do projeto da landing page do cliente, digite:
-   ```bash
-   vercel
-   ```
-3. Siga os passos na tela para logar e criar o projeto.
-4. Quando finalizar e o teste estiver correto, suba em produção com:
-   ```bash
-   vercel --prod
-   ```
+* **Link Canonical**: `<link rel="canonical" href="https://desentupidoraje.com.br/">` presente diretamente no HTML entregue.
+* **Meta Robots**: `<meta name="robots" content="index, follow">` ativado no HTML e em runtime.
+* **Arquivo `robots.txt`**: Liberado para rastreamento (`Allow: /`) e referenciando o sitemap oficial.
+* **Sitemap XML**: Publicado e acessível em `https://desentupidoraje.com.br/sitemap.xml`.
+* **Social Preview (Open Graph & Twitter Cards)**:
+  * `og:url` e `twitter:url`: `https://desentupidoraje.com.br/`
+  * `og:image` e `twitter:image`: `https://desentupidoraje.com.br/assets/img/og-image.webp` (URL absoluta HTTP 200).
+* **Dados Estruturados JSON-LD**: Marcação `LocalBusiness` com nome, descrição, horário 24h, localização em Santa Maria - RS, links sociais e telefone internacional normalizado (`+5555996766820`).
+* **Google Search Console**: Propriedade de domínio `desentupidoraje.com.br` cadastrada e verificada via TXT DNS na Cloudflare; sitemap enviado com sucesso e indexação solicitada.
 
 ---
 
-## 📋 Checklist Antes da Publicação
+## 🔒 Cabeçalhos de Segurança HTTP
 
-> [!WARNING]
-> Os depoimentos fornecidos por padrão são **fictícios (mock dados)** para demonstração de layout. É obrigatório coletar avaliações reais do cliente antes de colocar o site em produção.
+Os cabeçalhos declarados no arquivo `_headers` são aplicados pelo Cloudflare Pages na produção:
 
-Realize este checklist completo antes de entregar o site para o cliente final:
-
-- [ ] **Nome da Empresa**: Confirmar se o nome está escrito corretamente no `config.js`.
-- [ ] **Telefone Comercial**: Ligar para o número do `config.js` para garantir que está ativo.
-- [ ] **WhatsApp**: Clicar no link gerado e enviar mensagem de teste para confirmar se o número e o DDD estão corretos.
-- [ ] **Cidade e Região**: Revisar os textos automáticos da área de cobertura.
-- [ ] **Serviços**: Garantir que todos os serviços listados condizem com o escopo de atuação do cliente.
-- [ ] **Imagens Reais**: Substituir todas as imagens de placeholder cinza por fotos reais enviadas pelo cliente.
-- [ ] **Avaliações**: Substituir as avaliações fictícias por depoimentos reais enviados por clientes da empresa (ex: Google Maps, WhatsApp ou prints).
-- [ ] **Google Maps**: Inserir o iframe de localização real da empresa ou raio de atendimento.
-- [ ] **SEO**: Revisar o título da página e a descrição de metatag para indexação no Google.
-- [ ] **Responsividade**: Testar a abertura do site em computadores, tablets e smartphones de tamanhos variados.
-- [ ] **Hospedagem**: Concluir o deploy na Vercel ou hospedagem correspondente.
+* `X-Content-Type-Options: nosniff`
+* `Referrer-Policy: strict-origin-when-cross-origin`
+* `X-Frame-Options: SAMEORIGIN`
+* `Permissions-Policy: camera=(), microphone=(), geolocation=()`
 
 ---
 
-## 🔧 Preparação para Conexão do Domínio & Deploy
+## 📂 Estrutura de Arquivos do Repositório
 
-O projeto está estruturado em modo **staging** para testes e homologação no Cloudflare Pages, com bloqueio automático de indexação.
+```text
+desentupidora_je/
+├── index.html          # Estrutura HTML semântica e SEO estático
+├── styles.css          # Estilos CSS modernos e responsivos
+├── script.js           # Renderização dinâmica, SEO e manipulação de DOM
+├── config.js           # Configurações do negócio, SEO e deployment
+├── robots.txt          # Regras de rastreamento dos buscadores
+├── sitemap.xml         # Sitemap oficial de produção
+├── _headers            # Cabeçalhos de segurança HTTP no Cloudflare Pages
+├── _redirects          # Regras de redirecionamento 301 no Cloudflare Pages
+├── 404.html            # Página de erro 404 personalizada
+├── README.md           # Documentação geral do projeto
+├── assets/             # Imagens otimizadas (WebP, JPG, ICO)
+└── docs/               # Walkthrough, evidências técnicas e templates
+```
 
-### Alternando para Produção
+---
 
-Assim que o domínio final estiver configurado no **Registro.br**, realize os seguintes passos no `config.js`:
+## 🚀 Como Executar Localmente
 
-1. Abra o arquivo `config.js` e localize o objeto `deployment`.
-2. Altere o `environment` para `"production"` e `allowIndexing` para `true`.
-3. Preencha `productionDomain` com o domínio do cliente (ex: `desentupidoraje.com.br`) e `productionUrl` com a URL completa (ex: `https://desentupidoraje.com.br`).
-4. Faça commit e deploy das alterações.
+Não requer backend nem gerenciadores de pacotes para execução:
+1. Clone o repositório: `git clone https://github.com/Antigravity-Solutions/desentupidora-je.git`
+2. Abra o arquivo `index.html` diretamente no navegador de sua preferência.
 
-### Arquivos de Produção Adicionais
+---
 
-Na pasta `docs/templates/`, encontram-se os arquivos que deverão ser ajustados e movidos para a raiz do repositório ao realizar a publicação final:
-- **`robots.production.txt`**: Mova para `/robots.txt` e substitua `{{PRODUCTION_URL}}` pela URL oficial.
-- **`sitemap.production.xml`**: Mova para `/sitemap.xml` e substitua `{{PRODUCTION_URL}}` pela URL oficial.
-- **`_redirects.production`**: Mova para `/_redirects` para configurar as regras de redirecionamento no Cloudflare Pages.
+## 📈 Resumo de Performance (Lighthouse em Produção)
 
+* **Desktop**: Performance **99** | Acessibilidade **96** | Best Practices **100** | SEO **100**
+* **Mobile**: Performance **76** | Acessibilidade **96** | Best Practices **100** | SEO **100**

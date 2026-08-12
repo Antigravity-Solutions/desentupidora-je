@@ -17,7 +17,7 @@ const siteConfig = {
 
   // Configuração do GTM (Google Tag Manager)
   analytics: {
-    googleTagManagerId: ""
+    googleTagManagerId: "GTM-K9G7FTGG"
   },
 
   // Configuração da navegação principal do header

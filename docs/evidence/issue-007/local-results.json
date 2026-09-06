@@ -1,0 +1,114 @@
+{
+  "matrix": [
+    {
+      "contact_type": "whatsapp",
+      "contact_location": "header",
+      "contact_label": "WhatsApp",
+      "event": "contact_click",
+      "href": "https://wa.me/5555996766820?text=Ol%C3%A1%2C%20preciso%20de%20atendimento.%20(Via%20Site)"
+    },
+    {
+      "contact_type": "whatsapp",
+      "contact_location": "hero",
+      "contact_label": "Chamar no WhatsApp",
+      "event": "contact_click",
+      "href": "https://wa.me/5555996766820?text=Ol%C3%A1%2C%20preciso%20de%20atendimento.%20(Via%20Site)"
+    },
+    {
+      "contact_type": "phone",
+      "contact_location": "hero",
+      "contact_label": "Ligar agora",
+      "event": "contact_click",
+      "href": "tel:+5555996766820"
+    },
+    {
+      "contact_type": "phone",
+      "contact_location": "emergency_card",
+      "contact_label": "Central de Atendimento",
+      "event": "contact_click",
+      "href": "tel:+5555996766820"
+    },
+    {
+      "contact_type": "whatsapp",
+      "contact_location": "how_it_works",
+      "contact_label": "Enviar mensagem",
+      "event": "contact_click",
+      "href": "https://wa.me/5555996766820?text=Ol%C3%A1%2C%20preciso%20de%20atendimento.%20(Via%20Site)"
+    },
+    {
+      "contact_type": "whatsapp",
+      "contact_location": "location_section",
+      "contact_label": "Consultar Endereço",
+      "event": "contact_click",
+      "href": "https://wa.me/5555996766820?text=Gostaria%20de%20saber%20se%20atendem%20no%20meu%20endere%C3%A7o."
+    },
+    {
+      "contact_type": "maps",
+      "contact_location": "location_section",
+      "contact_label": "Abrir no Google Maps",
+      "event": "contact_click",
+      "href": "https://www.google.com/maps/search/?api=1&query=Rua+Nahir+Zambrano+da+Costa+8+Santa+Maria+RS"
+    },
+    {
+      "contact_type": "whatsapp",
+      "contact_location": "faq",
+      "contact_label": "Conversar agora",
+      "event": "contact_click",
+      "href": "https://wa.me/5555996766820?text=Ol%C3%A1%2C%20ainda%20tenho%20algumas%20d%C3%BAvidas%20e%20gostaria%20de%20conversar."
+    },
+    {
+      "contact_type": "whatsapp",
+      "contact_location": "final_cta",
+      "contact_label": "Chamar no WhatsApp",
+      "event": "contact_click",
+      "href": "https://wa.me/5555996766820?text=Ol%C3%A1%2C%20preciso%20de%20atendimento.%20(Via%20Site)"
+    },
+    {
+      "contact_type": "phone",
+      "contact_location": "final_cta",
+      "contact_label": "Ligar Agora",
+      "event": "contact_click",
+      "href": "tel:+5555996766820"
+    },
+    {
+      "contact_type": "whatsapp",
+      "contact_location": "footer",
+      "contact_label": "WhatsApp",
+      "event": "contact_click",
+      "href": "https://wa.me/5555996766820?text=Ol%C3%A1%2C%20preciso%20de%20atendimento.%20(Via%20Site)"
+    },
+    {
+      "contact_type": "phone",
+      "contact_location": "footer",
+      "contact_label": "Telefone",
+      "event": "contact_click",
+      "href": "tel:+5555996766820"
+    },
+    {
+      "contact_type": "instagram",
+      "contact_location": "footer",
+      "contact_label": "Instagram",
+      "event": "contact_click",
+      "href": "https://www.instagram.com/desentupidora.je/"
+    },
+    {
+      "contact_type": "whatsapp",
+      "contact_location": "floating_button",
+      "contact_label": "WhatsApp",
+      "event": "contact_click",
+      "href": "https://wa.me/5555996766820?text=Ol%C3%A1%2C%20preciso%20de%20atendimento.%20(Via%20Site)"
+    }
+  ],
+  "defensive": true,
+  "navigationNotCanceled": true,
+  "regressions": [
+    "FAQ",
+    "mobile menu/Escape",
+    "scrollspy",
+    "floating button"
+  ],
+  "consoleErrors": [],
+  "outboundPopup": true,
+  "noscript": true,
+  "externalServices": "isolated; GTM/GA4 receipt not tested"
+}

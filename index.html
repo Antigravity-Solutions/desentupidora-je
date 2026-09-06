@@ -75,9 +75,10 @@
 
     <!-- Google Tag Manager (noscript) -->
     <!-- Manter o ID sincronizado com analytics.googleTagManagerId -->
+    <!-- Keep this ID synchronized with analytics.googleTagManagerId in config.js. -->
     <noscript>
         <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-ABC1234"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K9G7FTGG"
             height="0"
             width="0"
             style="display:none;visibility:hidden"
@@ -109,7 +110,7 @@
             </nav>
 
             <div class="header-actions">
-                <a href="#" class="btn btn-whatsapp btn-header" data-whatsapp-link="true" target="_blank"
+                <a href="#" class="btn btn-whatsapp btn-header" data-whatsapp-link="true" data-track-event="contact_click" data-contact-type="whatsapp" data-contact-location="header" data-contact-label="WhatsApp" target="_blank"
                     rel="noopener noreferrer" aria-label="Falar pelo WhatsApp">
                     <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -147,7 +148,7 @@
                             atender com agilidade, segurança e qualidade.</p>
 
                         <div class="hero-buttons">
-                            <a href="#" class="btn btn-whatsapp btn-large" data-whatsapp-link="true" target="_blank"
+                            <a href="#" class="btn btn-whatsapp btn-large" data-whatsapp-link="true" data-track-event="contact_click" data-contact-type="whatsapp" data-contact-location="hero" data-contact-label="Chamar no WhatsApp" target="_blank"
                                 rel="noopener noreferrer">
                                 <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path
@@ -155,7 +156,7 @@
                                 </svg>
                                 Chamar no WhatsApp
                             </a>
-                            <a href="#" class="btn btn-phone btn-large" data-phone-primary-link="true">
+                            <a href="#" class="btn btn-phone btn-large" data-phone-primary-link="true" data-track-event="contact_click" data-contact-type="phone" data-contact-location="hero" data-contact-label="Ligar agora">
                                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path
@@ -166,7 +167,7 @@
                         </div>
 
                         <!-- Card de Emergência Clicável -->
-                        <a href="#" class="emergency-contact-card" data-phone-primary-link="true">
+                        <a href="#" class="emergency-contact-card" data-phone-primary-link="true" data-track-event="contact_click" data-contact-type="phone" data-contact-location="emergency_card" data-contact-label="Central de Atendimento">
                             <div class="emergency-card-inner">
                                 <div class="emergency-icon-wrapper">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -231,7 +232,7 @@
                         <h3>Você chama no WhatsApp</h3>
                         <p>Clique no botão e envie uma mensagem contando a sua necessidade. Nossa resposta é quase
                             instantânea.</p>
-                        <a href="#" class="step-link" data-whatsapp-link="true" target="_blank"
+                        <a href="#" class="step-link" data-whatsapp-link="true" data-track-event="contact_click" data-contact-type="whatsapp" data-contact-location="how_it_works" data-contact-label="Enviar mensagem" target="_blank"
                             rel="noopener noreferrer">Enviar mensagem &rarr;</a>
                     </div>
 
@@ -330,7 +331,7 @@
 
                     <div class="location-cta-box">
                         <p>Precisa de confirmação de cobertura no seu endereço?</p>
-                        <a href="#" class="btn btn-whatsapp" data-whatsapp-link="true"
+                        <a href="#" class="btn btn-whatsapp" data-whatsapp-link="true" data-track-event="contact_click" data-contact-type="whatsapp" data-contact-location="location_section" data-contact-label="Consultar Endereço"
                             data-whatsapp-msg="Gostaria de saber se atendem no meu endereço." target="_blank"
                             rel="noopener noreferrer">
                             Consultar Endereço
@@ -423,7 +424,7 @@
                                 d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.588 1.977 14.12 1.05 11.499 1.05c-5.447 0-9.873 4.372-9.877 9.802-.001 1.774.48 3.509 1.394 5.086L2.025 21.91l6.19-1.616c-.001.001 0 0 0 0zM17.65 14.86c-.29-.145-1.71-.846-1.974-.942-.266-.097-.459-.145-.653.145-.193.29-.747.942-.916 1.135-.168.193-.337.218-.627.072-1.737-.867-2.906-1.536-4.065-3.525-.3-.513.3-.477.859-1.597.09-.182.045-.34-.022-.485-.068-.145-.653-1.573-.895-2.153-.235-.568-.476-.491-.653-.5-.17-.008-.363-.01-.555-.01-.193 0-.507.072-.772.362-.266.29-1.013.99-1.013 2.415 0 1.424 1.037 2.803 1.182 2.996.145.193 2.04 3.115 4.939 4.368.69.298 1.229.476 1.649.609.693.22 1.324.19 1.822.115.556-.084 1.711-.7 1.952-1.376.24-.677.24-1.256.168-1.376-.07-.12-.264-.193-.553-.337z" />
                         </svg>
                         <strong>WhatsApp:</strong>
-                        <a href="#" data-whatsapp-link="true" target="_blank" rel="noopener noreferrer">
+                        <a href="#" data-whatsapp-link="true" data-track-event="contact_click" data-contact-type="whatsapp" data-contact-location="footer" data-contact-label="WhatsApp" target="_blank" rel="noopener noreferrer">
                             <span data-config="business.phonePrimary">(00) 00000-0000</span>
                         </a>
                     </li>
@@ -435,7 +436,7 @@
                                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
                         <strong>Ligação / Plantão:</strong>
-                        <a href="#" data-phone-primary-link="true">
+                        <a href="#" data-phone-primary-link="true" data-track-event="contact_click" data-contact-type="phone" data-contact-location="footer" data-contact-label="Telefone">
                             <span data-config="business.phonePrimary">(00) 00000-0000</span>
                         </a>
                     </li>
@@ -448,7 +449,7 @@
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                         </svg>
                         <strong>Instagram:</strong>
-                        <a href="#" data-instagram-link="true" target="_blank" rel="noopener noreferrer">
+                        <a href="#" data-instagram-link="true" data-track-event="contact_click" data-contact-type="instagram" data-contact-location="footer" data-contact-label="Instagram" target="_blank" rel="noopener noreferrer">
                             <span data-config="business.instagram">@empresa.local</span>
                         </a>
                     </li>
@@ -480,7 +481,7 @@
 
     <!-- Botão Flutuante do WhatsApp -->
     <div class="whatsapp-floating" id="whatsappFloating">
-        <a href="#" class="btn btn-whatsapp btn-floating-whatsapp" data-whatsapp-link="true" target="_blank"
+        <a href="#" class="btn btn-whatsapp btn-floating-whatsapp" data-whatsapp-link="true" data-track-event="contact_click" data-contact-type="whatsapp" data-contact-location="floating_button" data-contact-label="WhatsApp" target="_blank"
             rel="noopener noreferrer">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                 <path

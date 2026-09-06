@@ -98,3 +98,14 @@ Não requer backend nem gerenciadores de pacotes para execução:
 
 * **Desktop**: Performance **99** | Acessibilidade **96** | Best Practices **100** | SEO **100**
 * **Mobile**: Performance **76** | Acessibilidade **96** | Best Practices **100** | SEO **100**
+
+
+---
+
+## Analytics e eventos de contato
+
+Os 14 links de WhatsApp, telefone, Instagram e Google Maps enviam `contact_click` ao `window.dataLayer`, com `contact_type`, `contact_location` e `contact_label`. O rastreamento usa delegação de cliques e preserva a navegação dos links; representa intenção de contato.
+
+O contêiner é configurado em `analytics.googleTagManagerId` no `config.js`. Ao trocar o ID, sincronize também o iframe `noscript` em `index.html`.
+
+O GTM foi verificado e testado conforme informação do responsável. Consulte o [walkthrough da Issue #7](docs/walkthrough-issue-007.md) para arquitetura, cobertura, resultados e limites das evidências de GTM/GA4.

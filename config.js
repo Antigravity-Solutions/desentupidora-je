@@ -135,6 +135,10 @@ const siteConfig = {
   // Galeria de Fotos Recentes
   gallery: [
     {
+      label: "Limpeza de fossa séptica",
+      image: "./assets/img/evidencias/desentupimento.webp"
+    },
+    {
       label: "Caixa de gordura antes do reparo",
       image: "./assets/img/evidencias/caixa-gordura-inicio.webp"
     },

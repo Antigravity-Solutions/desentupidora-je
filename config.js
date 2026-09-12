@@ -135,16 +135,91 @@ const siteConfig = {
   // Galeria de Fotos Recentes
   gallery: [
     {
-      label: "Antes do serviço",
-      image: "./assets/img/antes.jpg" // Caminho para imagem (ex: "assets/img/galeria-1.jpg"). Se vazio, exibe o placeholder.
+      label: "Caixa de gordura antes do reparo",
+      image: "./assets/img/evidencias/caixa-gordura-inicio.webp"
     },
     {
-      label: "Durante o atendimento",
-      image: "./assets/img/durante.jpg" // Caminho para imagem (ex: "assets/img/galeria-2.jpg"). Se vazio, exibe o placeholder.
+      label: "Reparo e vedação da caixa de gordura",
+      image: "./assets/img/evidencias/caixa-gordura-andamento.webp"
     },
     {
-      label: "Serviço finalizado",
-      image: "./assets/img/depois.jpg" // Caminho para imagem (ex: "assets/img/galeria-3.jpg"). Se vazio, exibe o placeholder.
+      label: "Caixa de gordura com serviço finalizado",
+      image: "./assets/img/evidencias/caixa-gordura-concluido.webp"
+    },
+    {
+      label: "Peça substituída no registro do banheiro",
+      image: "./assets/img/evidencias/troca-registro-privada-peca.webp"
+    },
+    {
+      label: "Troca de registro em banheiro",
+      image: "./assets/img/evidencias/troca-registro-privada-atendimento.webp"
+    },
+    {
+      label: "Troca de registro em andamento",
+      image: "./assets/img/evidencias/troca-registro-privada-andamento.webp"
+    },
+    {
+      label: "Acabamento do novo registro",
+      image: "./assets/img/evidencias/troca-registro-privada-acabamento.webp"
+    },
+    {
+      label: "Registro de banheiro finalizado",
+      image: "./assets/img/evidencias/troca-registro-privada-concluido.webp"
+    },
+    {
+      label: "Histórico: antes do serviço",
+      image: "./assets/img/antes.jpg"
+    },
+    {
+      label: "Histórico: durante o atendimento",
+      image: "./assets/img/durante.jpg"
+    },
+    {
+      label: "Histórico: serviço finalizado",
+      image: "./assets/img/depois.jpg"
+    },
+    {
+      label: "Histórico: caixa de gordura",
+      image: "./assets/img/caixa_gordura.jpeg"
+    },
+    {
+      label: "Histórico: caixa de gordura antes",
+      image: "./assets/img/caixa_gordura_antes.jpeg"
+    },
+    {
+      label: "Histórico: caixa de gordura em atendimento",
+      image: "./assets/img/caixa_gordura_1.jpeg"
+    },
+    {
+      label: "Histórico: caixa de gordura finalizada",
+      image: "./assets/img/caixa_gordura_3.jpeg"
+    },
+    {
+      label: "Histórico: serviço J.E.",
+      image: "./assets/img/je_000.jpg"
+    },
+    {
+      label: "Histórico: atendimento em tubulação",
+      image: "./assets/img/je_sv01.jpg"
+    },
+    {
+      label: "Equipamento: hidrojato",
+      image: "./assets/img/hidrojato.jpg"
+    },
+    {
+      label: "Equipamentos profissionais",
+      image: "./assets/img/equipamentos.jpg"
+    }
+  ],
+
+  galleryPosts: [
+    {
+      label: "Limpeza de caixa d'água",
+      image: "./assets/img/evidencias/limpeza-caixa-dagua.webp"
+    },
+    {
+      label: "Conserto de tubulação de caixa de gordura",
+      image: "./assets/img/evidencias/post-caixa-gordura.webp"
     }
   ],
 
@@ -200,11 +275,11 @@ const siteConfig = {
 
   beforeAfter: [
     {
-      title: "Limpeza de caixa de gordura",
-      beforeImage: "./assets/img/caixa_gordura_antes.jpeg",
-      afterImage: "./assets/img/caixa_gordura_1.jpeg",
-      beforeAlt: "Situação antes da limpeza da caixa de gordura",
-      afterAlt: "Resultado após a limpeza da caixa de gordura"
+      title: "Manutenção em caixa de gordura",
+      beforeImage: "./assets/img/evidencias/caixa-gordura-inicio.webp",
+      afterImage: "./assets/img/evidencias/caixa-gordura-concluido.webp",
+      beforeAlt: "Caixa de gordura antes do reparo e vedação",
+      afterAlt: "Caixa de gordura após reparo e vedação"
     },
     {
       title: "Desentupimento de ralo",

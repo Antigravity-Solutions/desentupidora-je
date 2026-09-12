@@ -727,15 +727,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // 11. Gallery Renderer
     function renderGallery() {
         const galleryItems = getConfigValue('gallery') || [];
+        const galleryPosts = getConfigValue('galleryPosts') || [];
         const galleryGrid = document.getElementById('gallery-grid');
         if (!galleryGrid) return;
         galleryGrid.innerHTML = '';
+
+        const carousel = document.createElement('div');
+        carousel.className = 'gallery-carousel';
+
+        const track = document.createElement('div');
+        track.className = 'gallery-track';
+        track.setAttribute('aria-label', 'Evidências de serviços recentes');
 
         galleryItems.forEach(item => {
             const card = document.createElement('div');
             card.className = 'gallery-card';
             if (item.image) {
-                card.innerHTML = `<img src="${item.image}" alt="${item.label}" class="gallery-image" loading="lazy">`;
+                card.innerHTML = `
+                    <span class="gallery-badge">${item.label}</span>
+                    <img src="${item.image}" alt="${item.label}" class="gallery-image" loading="lazy">
+                `;
             } else {
                 card.innerHTML = `
                     <div class="image-placeholder gallery-placeholder">
@@ -751,8 +762,61 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
             }
-            galleryGrid.appendChild(card);
+            track.appendChild(card);
         });
+
+        const prevButton = document.createElement('button');
+        prevButton.className = 'gallery-nav gallery-nav-prev';
+        prevButton.type = 'button';
+        prevButton.setAttribute('aria-label', 'Ver imagens anteriores');
+        prevButton.textContent = '‹';
+
+        const nextButton = document.createElement('button');
+        nextButton.className = 'gallery-nav gallery-nav-next';
+        nextButton.type = 'button';
+        nextButton.setAttribute('aria-label', 'Ver próximas imagens');
+        nextButton.textContent = '›';
+
+        function scrollGallery(direction) {
+            const firstCard = track.querySelector('.gallery-card');
+            const distance = firstCard ? firstCard.getBoundingClientRect().width + 24 : 320;
+            track.scrollBy({ left: direction * distance, behavior: 'smooth' });
+        }
+
+        prevButton.addEventListener('click', () => scrollGallery(-1));
+        nextButton.addEventListener('click', () => scrollGallery(1));
+
+        carousel.append(prevButton, track, nextButton);
+        galleryGrid.appendChild(carousel);
+
+        if (galleryPosts.length > 0) {
+            const postsWrapper = document.createElement('div');
+            postsWrapper.className = 'gallery-posts';
+            postsWrapper.innerHTML = `
+                <div class="gallery-posts-header">
+                    <span class="section-subtitle">Conteúdos Informativos</span>
+                    <h3>Orientações visuais dos serviços</h3>
+                </div>
+            `;
+
+            const postsGrid = document.createElement('div');
+            postsGrid.className = 'gallery-posts-grid';
+
+            galleryPosts.forEach(item => {
+                const postCard = document.createElement('div');
+                postCard.className = 'gallery-post-card';
+                if (item.image) {
+                    postCard.innerHTML = `
+                        <span class="gallery-badge">${item.label}</span>
+                        <img src="${item.image}" alt="${item.label}" class="gallery-post-image" loading="lazy">
+                    `;
+                }
+                postsGrid.appendChild(postCard);
+            });
+
+            postsWrapper.appendChild(postsGrid);
+            galleryGrid.appendChild(postsWrapper);
+        }
     }
     // 12. Location and Google Maps Renderer
     function renderLocation() {
